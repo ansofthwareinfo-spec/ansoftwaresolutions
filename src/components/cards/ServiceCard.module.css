@@ -1,0 +1,143 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem 1.8rem;
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease),
+    border-color 0.4s var(--ease);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(15, 179, 162, 0.35), transparent 50%),
+    linear-gradient(150deg, var(--c-dark) 0%, #1a3f92 100%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.card:hover::after,
+.card:focus-within::after {
+  opacity: 1;
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  color: var(--c-primary);
+  background: var(--c-primary-50);
+  transition:
+    color 0.4s var(--ease),
+    background 0.4s var(--ease);
+}
+
+.index {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-line);
+  transition: color 0.4s var(--ease);
+}
+
+.title {
+  font-size: var(--fs-lg);
+  margin-bottom: 0.7rem;
+  transition: color 0.4s var(--ease);
+}
+
+.stretched::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.stretched:focus-visible {
+  outline: none;
+}
+
+.card:has(.stretched:focus-visible) {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+.text {
+  flex: 1;
+  font-size: var(--fs-sm);
+  color: var(--c-muted);
+  transition: color 0.4s var(--ease);
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.4rem;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--c-primary);
+  transition: color 0.4s var(--ease);
+}
+
+.more svg {
+  transition: transform 0.3s var(--ease);
+}
+
+/* Hover (dark) state */
+.card:hover .icon,
+.card:focus-within .icon {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.card:hover .title,
+.card:focus-within .title {
+  color: #fff;
+}
+
+.card:hover .text,
+.card:focus-within .text {
+  color: var(--c-on-dark);
+}
+
+.card:hover .index,
+.card:focus-within .index {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.card:hover .more,
+.card:focus-within .more {
+  color: #6fe0d4;
+}
+
+.card:hover .more svg {
+  transform: translate(3px, -3px);
+}

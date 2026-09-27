@@ -1,0 +1,38 @@
+.wrap {
+  max-width: 820px;
+}
+
+.updated {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 0.35rem 0.9rem;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--c-primary-700);
+  background: var(--c-primary-50);
+  border-radius: var(--radius-pill);
+}
+
+.block {
+  padding-bottom: 1.75rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.block:last-child {
+  border-bottom: 0;
+}
+
+.block h2 {
+  margin-bottom: 0.75rem;
+  font-size: var(--fs-xl);
+}
+
+.block p + p {
+  margin-top: 0.75rem;
+}
+
+.block a {
+  color: var(--c-primary);
+  font-weight: 600;
+}

@@ -1,0 +1,45 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.logo svg {
+  transition: transform 0.4s var(--ease);
+}
+
+.logo:hover svg {
+  transform: rotate(-8deg) scale(1.04);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--c-ink);
+}
+
+.sub {
+  margin-top: 0.22rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--c-secondary-600);
+}
+
+.light .name {
+  color: #fff;
+}
+
+.light .sub {
+  color: #6fe0d4;
+}

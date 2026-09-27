@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Design tokens — change the brand here and it updates everywhere.
+   ========================================================================== */
+:root {
+  /* Brand colours */
+  --c-primary: #2b59c3;
+  --c-primary-600: #2249a6;
+  --c-primary-700: #1b3a85;
+  --c-primary-100: #dce6fa;
+  --c-primary-50: #eef3fd;
+
+  --c-secondary: #0fb3a2;
+  --c-secondary-600: #0b9486;
+  --c-secondary-50: #e7f8f6;
+
+  --c-accent: #ff8a3d;
+  --c-accent-600: #f0711f;
+  --c-accent-50: #fff2e9;
+
+  /* Neutrals */
+  --c-ink: #0e1a33;
+  --c-ink-2: #3d4a66;
+  --c-muted: #6b7690;
+  --c-line: #e3e8f2;
+  --c-bg: #ffffff;
+  --c-bg-soft: #f5f7fc;
+  --c-dark: #0b1630;
+  --c-dark-2: #13213f;
+  --c-dark-line: rgba(255, 255, 255, 0.1);
+  --c-on-dark: #c9d3ea;
+
+  /* Feedback */
+  --c-success: #12a150;
+  --c-success-50: #e8f7ee;
+  --c-error: #d93636;
+  --c-error-50: #fdecec;
+
+  --grad-brand: linear-gradient(135deg, var(--c-primary) 0%, var(--c-secondary) 100%);
+  --grad-warm: linear-gradient(135deg, var(--c-accent) 0%, #ffb547 100%);
+
+  /* Typography */
+  --font-display: 'Outfit', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: clamp(1.2rem, 1.1rem + 0.4vw, 1.375rem);
+  --fs-xl: clamp(1.4rem, 1.2rem + 0.8vw, 1.75rem);
+  --fs-2xl: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  --fs-3xl: clamp(2.1rem, 1.5rem + 2.6vw, 3.4rem);
+  --fs-4xl: clamp(2.4rem, 1.6rem + 3.6vw, 4.1rem);
+
+  /* Spacing & layout */
+  --container: 1200px;
+  --gutter: clamp(1rem, 0.6rem + 1.8vw, 2rem);
+  --section-y: clamp(4rem, 2.8rem + 5vw, 7rem);
+  --nav-h: 76px;
+
+  /* Shape & depth */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(14, 26, 51, 0.06), 0 1px 3px rgba(14, 26, 51, 0.06);
+  --shadow: 0 8px 24px -6px rgba(14, 26, 51, 0.1), 0 2px 6px rgba(14, 26, 51, 0.05);
+  --shadow-lg: 0 24px 50px -12px rgba(14, 26, 51, 0.18);
+  --shadow-brand: 0 12px 28px -8px rgba(43, 89, 195, 0.45);
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 0.25s;
+
+  --z-nav: 100;
+  --z-drawer: 200;
+  --z-float: 90;
+}

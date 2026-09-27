@@ -1,0 +1,10 @@
+{
+  "name": "AN Software Solutions",
+  "short_name": "AN Software",
+  "description": "Software development, web, mobile, cloud and AI solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2b59c3",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

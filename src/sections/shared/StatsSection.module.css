@@ -1,0 +1,49 @@
+.section {
+  position: relative;
+  padding-block: clamp(3rem, 2rem + 3vw, 4.5rem);
+  background:
+    radial-gradient(circle at 15% 50%, rgba(15, 179, 162, 0.28), transparent 40%),
+    radial-gradient(circle at 85% 50%, rgba(43, 89, 195, 0.45), transparent 45%),
+    var(--c-dark);
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.stat + .stat {
+  border-left: 1px solid var(--c-dark-line);
+}
+
+.value {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 1.8rem + 2.4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  margin-top: 0.4rem;
+  font-weight: 600;
+  color: var(--c-on-dark);
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.5rem;
+  }
+
+  .stat:nth-child(3) {
+    border-left: 0;
+  }
+}
