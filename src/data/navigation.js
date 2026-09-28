@@ -4,7 +4,7 @@ export const NAV_LINKS = [
   { label: 'Services', to: '/services', hasMenu: true },
   { label: 'Technologies', to: '/technologies' },
   { label: 'Industries', to: '/industries' },
-  { label: 'Portfolio', to: '/portfolio' },
+  { label: 'Solutions', to: '/solutions' },
   { label: 'Careers', to: '/careers' },
   { label: 'Contact', to: '/contact' },
 ]
@@ -13,7 +13,7 @@ export const FOOTER_COMPANY_LINKS = [
   { label: 'About Us', to: '/about' },
   { label: 'Technologies', to: '/technologies' },
   { label: 'Industries', to: '/industries' },
-  { label: 'Portfolio', to: '/portfolio' },
+  { label: 'Solutions', to: '/solutions' },
   { label: 'Careers', to: '/careers' },
   { label: 'Contact Us', to: '/contact' },
 ]

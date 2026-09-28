@@ -96,7 +96,7 @@
 
 .principle svg {
   margin-bottom: 1rem;
-  color: #6fe0d4;
+  color: var(--c-on-dark-accent);
 }
 
 .principle h3 {

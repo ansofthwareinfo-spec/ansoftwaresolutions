@@ -43,7 +43,7 @@
 }
 
 .light .eyebrow {
-  color: #6fe0d4;
+  color: var(--c-on-dark-accent);
 }
 
 .light .title {

@@ -25,6 +25,7 @@ function upsertCanonical(href) {
 /**
  * Updates the document's title, description, canonical and social tags
  * per page. Updates existing tags in place so nothing is duplicated.
+ * `image` is a path under /public, e.g. "/og/about.jpg".
  */
 export default function Seo({ title, description = SITE.defaultDescription, image = SITE.ogImage, noindex = false }) {
   const { pathname } = useLocation()
@@ -41,8 +42,13 @@ export default function Seo({ title, description = SITE.defaultDescription, imag
     upsertMeta('property', 'og:description', description)
     upsertMeta('property', 'og:url', url)
     upsertMeta('property', 'og:image', imageUrl)
+    upsertMeta('property', 'og:image:width', String(SITE.ogImageSize.width))
+    upsertMeta('property', 'og:image:height', String(SITE.ogImageSize.height))
+    upsertMeta('property', 'og:image:alt', fullTitle)
+    upsertMeta('name', 'twitter:card', 'summary_large_image')
     upsertMeta('name', 'twitter:title', fullTitle)
     upsertMeta('name', 'twitter:description', description)
+    upsertMeta('name', 'twitter:image', imageUrl)
     upsertCanonical(url)
   }, [title, description, image, noindex, pathname])
 

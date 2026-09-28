@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Logo from '@/components/common/Logo'
 import SocialLinks from '@/components/common/SocialLinks'
@@ -18,8 +18,8 @@ export default function Footer() {
         <div className={styles.brand}>
           <Logo tone="light" />
           <p className={styles.about}>
-            {SITE.name} is a software development and IT services company helping startups and enterprises design,
-            build and scale digital products with confidence.
+            {SITE.name} is a Hyderabad-based technology company. We help businesses turn challenges into
+            opportunities through software, data and intelligent solutions.
           </p>
           <SocialLinks tone="light" />
         </div>
@@ -38,7 +38,7 @@ export default function Footer() {
         <div>
           <h2 className={styles.heading}>Services</h2>
           <ul className={styles.links}>
-            {SERVICES.slice(0, 7).map((service) => (
+            {SERVICES.map((service) => (
               <li key={service.slug}>
                 <Link to={`/services/${service.slug}`}>{service.title}</Link>
               </li>
@@ -52,8 +52,7 @@ export default function Footer() {
             <li>
               <MapPin size={18} aria-hidden="true" />
               <address>
-                {contact.address.line1}, {contact.address.line2}, {contact.address.city} – {contact.address.zip},{' '}
-                {contact.address.country}
+                {contact.address.city}, {contact.address.state} {contact.address.zip}, {contact.address.country}
               </address>
             </li>
             <li>
@@ -64,10 +63,6 @@ export default function Footer() {
               <Mail size={18} aria-hidden="true" />
               <a href={`mailto:${contact.email}`}>{contact.email}</a>
             </li>
-            <li>
-              <Clock size={18} aria-hidden="true" />
-              <span>{contact.hours}</span>
-            </li>
           </ul>
         </div>
       </div>
@@ -75,8 +70,8 @@ export default function Footer() {
       <div className="container">
         <div className={styles.newsletter}>
           <div>
-            <h2 className={styles.newsTitle}>Subscribe to our newsletter</h2>
-            <p>Tech insights, product tips and company news — once a month, no spam.</p>
+            <h2 className={styles.newsTitle}>Stay in the loop</h2>
+            <p>Occasional notes on software, data and AI that are actually useful. No spam.</p>
           </div>
           <NewsletterForm />
         </div>

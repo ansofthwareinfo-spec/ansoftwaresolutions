@@ -2,8 +2,8 @@
   position: relative;
   color: var(--c-on-dark);
   background:
-    radial-gradient(circle at 90% 0%, rgba(43, 89, 195, 0.35), transparent 40%),
-    radial-gradient(circle at 0% 100%, rgba(15, 179, 162, 0.18), transparent 35%),
+    radial-gradient(circle at 90% 0%, rgba(9, 105, 168, 0.35), transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(2, 195, 222, 0.18), transparent 35%),
     var(--c-dark);
   font-size: var(--fs-sm);
 }
@@ -65,7 +65,7 @@
 .contact svg {
   flex-shrink: 0;
   margin-top: 0.2rem;
-  color: #6fe0d4;
+  color: var(--c-on-dark-accent);
 }
 
 .contact address {
@@ -105,7 +105,7 @@
 }
 
 .newsRow:focus-within {
-  border-color: rgba(111, 224, 212, 0.6);
+  border-color: rgba(95, 211, 243, 0.6);
 }
 
 .newsRow input {
@@ -131,8 +131,8 @@
 .newsRow input:-webkit-autofill:focus {
   -webkit-text-fill-color: #fff;
   caret-color: #fff;
-  -webkit-box-shadow: 0 0 0 1000px #1a2547 inset;
-  box-shadow: 0 0 0 1000px #1a2547 inset;
+  -webkit-box-shadow: 0 0 0 1000px #10305f inset;
+  box-shadow: 0 0 0 1000px #10305f inset;
   border-radius: var(--radius-pill);
   transition: background-color 9999s ease-out 0s;
 }
@@ -169,7 +169,7 @@
   align-items: center;
   gap: 0.6rem;
   font-weight: 600;
-  color: #6fe0d4;
+  color: var(--c-on-dark-accent);
 }
 
 .spin {

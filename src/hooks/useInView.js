@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 
-/** Returns [ref, inView]. Once visible it stays true (one-shot) by default. */
-export function useInView({ threshold = 0.15, rootMargin = '0px 0px -40px 0px', once = true } = {}) {
+/**
+ * Returns [ref, inView]. Fires as soon as the element's top edge is 60px inside the viewport,
+ * so tall elements reveal immediately. Once visible it stays true (one-shot) by default.
+ */
+export function useInView({ threshold = 0, rootMargin = '0px 0px -60px 0px', once = true } = {}) {
   const ref = useRef(null)
   // Without IntersectionObserver support, treat everything as visible.
   const [inView, setInView] = useState(() => typeof IntersectionObserver === 'undefined')

@@ -16,7 +16,7 @@ export default function FaqSection({ items = GENERAL_FAQS, soft = false }) {
             align="left"
             eyebrow="FAQ"
             title={<span id="faq-title">Frequently asked questions</span>}
-            description="Quick answers to the questions we hear most. Can’t find what you’re looking for? Talk to us directly."
+            description="Answers to the questions people usually ask us. If yours is not here, just get in touch."
           />
           <Reveal className={styles.help}>
             <MessageCircle size={28} aria-hidden="true" />

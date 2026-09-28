@@ -11,9 +11,9 @@ export default function NotFound() {
         <p className={styles.code} aria-hidden="true">
           404
         </p>
-        <h1 className={styles.title}>Oops! This page wandered off.</h1>
+        <h1 className={styles.title}>Sorry, we can’t find that page</h1>
         <p className={styles.text}>
-          The page you are looking for may have been moved or no longer exists. Let’s get you back on track.
+          It may have moved, or the link might be out of date. Try the home page, or get in touch if you need help.
         </p>
         <div className={styles.actions}>
           <Button to="/" icon={Home} iconPosition="left">

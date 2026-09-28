@@ -6,7 +6,7 @@ import { TERMS } from '@/data/legal'
 export default function Terms() {
   return (
     <>
-      <Seo title="Terms of Service" description="Terms and conditions for using the AN Software Solutions website." />
+      <Seo image="/og/terms.jpg" title="Terms of Service" description="Terms and conditions for using the A&N Software Solutions website." />
       <PageHero
         title="Terms of Service"
         description="Please read these terms carefully before using our website."

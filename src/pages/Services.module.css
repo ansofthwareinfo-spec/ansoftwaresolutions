@@ -26,8 +26,8 @@
 .featured {
   color: var(--c-on-dark);
   background:
-    radial-gradient(circle at 100% 0%, rgba(15, 179, 162, 0.35), transparent 50%),
-    linear-gradient(160deg, var(--c-dark) 0%, #173a8a 100%);
+    radial-gradient(circle at 100% 0%, rgba(2, 195, 222, 0.35), transparent 50%),
+    var(--grad-dark);
   border-color: transparent;
   box-shadow: var(--shadow-lg);
 }
@@ -67,7 +67,7 @@
 }
 
 .featured .modelList svg {
-  color: #6fe0d4;
+  color: var(--c-on-dark-accent);
 }
 
 .modelList {

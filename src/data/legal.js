@@ -5,7 +5,7 @@ export const PRIVACY_POLICY = {
     {
       title: 'Information We Collect',
       body: [
-        'We collect information you voluntarily provide through our contact, career and newsletter forms — such as your name, email address, phone number, company name, resume and message.',
+        'We collect information you voluntarily provide through our contact, career and newsletter forms, such as your name, email address, phone number, company name, resume and message.',
         'We may also collect limited technical information such as browser type, device and pages visited, to help us improve the website.',
       ],
     },
@@ -60,7 +60,7 @@ export const TERMS = {
     {
       title: 'Intellectual Property',
       body: [
-        'All content on this website — including text, graphics, logos and design — is the property of the company or its licensors and may not be reproduced without prior written permission.',
+        'All content on this website, including text, graphics, logos and design, is the property of the company or its licensors and may not be reproduced without prior written permission.',
       ],
     },
     {

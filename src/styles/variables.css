@@ -2,32 +2,33 @@
    Design tokens — change the brand here and it updates everywhere.
    ========================================================================== */
 :root {
-  /* Brand colours */
-  --c-primary: #2b59c3;
-  --c-primary-600: #2249a6;
-  --c-primary-700: #1b3a85;
-  --c-primary-100: #dce6fa;
-  --c-primary-50: #eef3fd;
+  /* Brand colours — sampled from the A&N logo */
+  --c-primary: #0969a8;
+  --c-primary-600: #07578c;
+  --c-primary-700: #054170;
+  --c-primary-100: #d2e7f5;
+  --c-primary-50: #ecf5fb;
 
-  --c-secondary: #0fb3a2;
-  --c-secondary-600: #0b9486;
-  --c-secondary-50: #e7f8f6;
+  --c-secondary: #039acf;
+  --c-secondary-600: #0279a6;
+  --c-secondary-50: #e4f5fb;
 
   --c-accent: #ff8a3d;
   --c-accent-600: #f0711f;
   --c-accent-50: #fff2e9;
 
   /* Neutrals */
-  --c-ink: #0e1a33;
+  --c-ink: #061a3a;
   --c-ink-2: #3d4a66;
   --c-muted: #6b7690;
   --c-line: #e3e8f2;
   --c-bg: #ffffff;
   --c-bg-soft: #f5f7fc;
-  --c-dark: #0b1630;
-  --c-dark-2: #13213f;
+  --c-dark: #042351;
+  --c-dark-2: #0a3470;
   --c-dark-line: rgba(255, 255, 255, 0.1);
-  --c-on-dark: #c9d3ea;
+  --c-on-dark: #c6d8ec;
+  --c-on-dark-accent: #5fd3f3;
 
   /* Feedback */
   --c-success: #12a150;
@@ -35,7 +36,8 @@
   --c-error: #d93636;
   --c-error-50: #fdecec;
 
-  --grad-brand: linear-gradient(135deg, var(--c-primary) 0%, var(--c-secondary) 100%);
+  --grad-brand: linear-gradient(135deg, var(--c-primary) 0%, #02c3de 100%);
+  --grad-dark: linear-gradient(150deg, var(--c-dark) 0%, #0a4a8a 100%);
   --grad-warm: linear-gradient(135deg, var(--c-accent) 0%, #ffb547 100%);
 
   /* Typography */
@@ -63,10 +65,10 @@
   --radius: 14px;
   --radius-lg: 22px;
   --radius-pill: 999px;
-  --shadow-sm: 0 1px 2px rgba(14, 26, 51, 0.06), 0 1px 3px rgba(14, 26, 51, 0.06);
-  --shadow: 0 8px 24px -6px rgba(14, 26, 51, 0.1), 0 2px 6px rgba(14, 26, 51, 0.05);
-  --shadow-lg: 0 24px 50px -12px rgba(14, 26, 51, 0.18);
-  --shadow-brand: 0 12px 28px -8px rgba(43, 89, 195, 0.45);
+  --shadow-sm: 0 1px 2px rgba(6, 26, 58, 0.06), 0 1px 3px rgba(6, 26, 58, 0.06);
+  --shadow: 0 8px 24px -6px rgba(6, 26, 58, 0.1), 0 2px 6px rgba(6, 26, 58, 0.05);
+  --shadow-lg: 0 24px 50px -12px rgba(6, 26, 58, 0.18);
+  --shadow-brand: 0 12px 28px -8px rgba(9, 105, 168, 0.45);
 
   /* Motion */
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);

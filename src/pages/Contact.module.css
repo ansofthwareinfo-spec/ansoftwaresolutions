@@ -1,6 +1,6 @@
 .channels {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
   margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
 }
@@ -147,9 +147,6 @@ a.channelValue:hover {
 }
 
 @media (max-width: 1024px) {
-  .channels {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .layout {
     grid-template-columns: 1fr;

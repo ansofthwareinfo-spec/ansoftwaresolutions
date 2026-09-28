@@ -5,12 +5,19 @@
   flex-shrink: 0;
 }
 
-.logo svg {
+.mark {
+  flex-shrink: 0;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px -4px rgba(4, 35, 81, 0.35);
   transition: transform 0.4s var(--ease);
 }
 
-.logo:hover svg {
-  transform: rotate(-8deg) scale(1.04);
+.logo:hover .mark {
+  transform: rotate(-6deg) scale(1.05);
+}
+
+.light .mark {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
 }
 
 .text {
@@ -41,5 +48,5 @@
 }
 
 .light .sub {
-  color: #6fe0d4;
+  color: var(--c-on-dark-accent);
 }

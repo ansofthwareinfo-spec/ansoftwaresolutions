@@ -8,13 +8,13 @@ export default function WhyChooseUsSection({ soft = true }) {
     <section className={`section ${soft ? 'section--soft' : ''}`} aria-labelledby="why-title">
       <div className="container">
         <SectionHeading
-          eyebrow="Why choose us"
+          eyebrow="Why work with us"
           title={
             <span id="why-title">
-              A technology partner that <span className="text-gradient">owns the outcome</span>
+              A small team that takes <span className="text-gradient">real ownership</span>
             </span>
           }
-          description="We combine technical depth with honest communication, so you get software that works — and a partner you can rely on."
+          description="Solid technical skills and straightforward communication. You always know where your project stands."
         />
         <div className="grid-3">
           {WHY_CHOOSE_US.map((item, index) => (

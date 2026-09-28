@@ -110,7 +110,7 @@ export default function MobileMenu({ id, open, onClose }) {
 
         <div className={styles.footer}>
           <Button to="/contact" fullWidth>
-            Get a Free Quote
+            Book a Free Consultation
           </Button>
           <a href={`tel:${SITE.contact.phoneHref}`} className={styles.contact}>
             <Phone size={18} aria-hidden="true" /> {SITE.contact.phone}

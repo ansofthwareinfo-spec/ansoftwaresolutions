@@ -18,18 +18,19 @@ export default function Technologies() {
   return (
     <>
       <Seo
+        image="/og/technologies.jpg"
         title="Technologies"
-        description="React, Angular, Node.js, Java, Python, .NET, Flutter, AWS, Azure, Kubernetes and more — explore the technology stack AN Software Solutions uses to build modern software."
+        description="The tools A&N Software Solutions works with across web, mobile, cloud, data, business intelligence, AI and automation, and how we choose the right ones for you."
       />
 
       <PageHero
         eyebrow="Technologies"
         title={
           <>
-            The right tools for <span className="text-gradient">every challenge</span>
+            The tools <span className="text-gradient">we work with</span>
           </>
         }
-        description="Our engineers work across modern frontend, backend, mobile, cloud, data and testing technologies — so we always recommend what fits you best."
+        description="We work with well-established tools across software, data, AI and cloud, and recommend whichever fits your project best."
       />
 
       <section className="section" aria-label="Technology stack">
@@ -69,8 +70,8 @@ export default function Technologies() {
           <SectionHeading
             tone="light"
             eyebrow="How we choose"
-            title={<span id="principles-title">Technology decisions grounded in your goals</span>}
-            description="We never chase trends for their own sake. Every recommendation is based on four simple principles."
+            title={<span id="principles-title">How we pick the right tools</span>}
+            description="The newest tool is not always the right one. These four questions guide every recommendation we make."
           />
           <div className="grid-4">
             {TECH_PRINCIPLES.map((item, index) => (

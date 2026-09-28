@@ -51,16 +51,8 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 0.6rem;
-  padding: 1.5rem 1.6rem 1.75rem;
-}
-
-.client {
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--c-secondary-600);
+  gap: 0.85rem;
+  padding: 1.5rem 1.6rem 1.6rem;
 }
 
 .title {
@@ -68,20 +60,69 @@
 }
 
 .summary {
-  flex: 1;
   font-size: var(--fs-sm);
   color: var(--c-muted);
 }
 
-.result {
+.idealFor {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.65rem 0.85rem;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--c-ink-2);
+  background: var(--c-primary-50);
+  border-radius: var(--radius-sm);
+}
+
+.idealFor svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--c-primary);
+}
+
+.idealFor strong {
+  color: var(--c-ink);
+}
+
+.features {
+  display: grid;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.features li {
+  display: flex;
+  align-items: flex-start;
   gap: 0.5rem;
-  padding: 0.6rem 0.85rem;
-  margin-bottom: 0.4rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-ink-2);
+}
+
+.features svg {
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+  color: var(--c-secondary);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  padding-top: 1rem;
   font-size: var(--fs-sm);
   font-weight: 700;
-  color: var(--c-success);
-  background: var(--c-success-50);
-  border-radius: var(--radius-sm);
+  color: var(--c-primary);
+  border-top: 1px dashed var(--c-line);
+}
+
+.cta svg {
+  transition: transform var(--dur) var(--ease);
+}
+
+.cta:hover svg {
+  transform: translateX(3px);
 }

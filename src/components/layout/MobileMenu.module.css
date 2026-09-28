@@ -13,7 +13,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(11, 22, 48, 0.55);
+  background: rgba(4, 35, 81, 0.55);
   backdrop-filter: blur(3px);
   opacity: 0;
   transition: opacity 0.35s var(--ease);

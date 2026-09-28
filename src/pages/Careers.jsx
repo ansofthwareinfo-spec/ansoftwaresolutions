@@ -1,9 +1,8 @@
-import { ArrowDown, Check, Mail, Search } from 'lucide-react'
+import { ArrowDown, Check, Mail } from 'lucide-react'
 import { useRef, useState } from 'react'
 import FeatureCard from '@/components/cards/FeatureCard'
 import JobCard from '@/components/cards/JobCard'
 import Button from '@/components/common/Button'
-import FilterBar from '@/components/common/FilterBar'
 import PageHero from '@/components/common/PageHero'
 import Reveal from '@/components/common/Reveal'
 import SectionHeading from '@/components/common/SectionHeading'
@@ -11,32 +10,22 @@ import Seo from '@/components/common/Seo'
 import SmartImage from '@/components/common/SmartImage'
 import CareerApplicationForm from '@/components/forms/CareerApplicationForm'
 import { SITE } from '@/config/site'
-import { DEPARTMENTS, HIRING_STEPS, JOBS, PERKS } from '@/data/careers'
+import { HIRING_STEPS, JOBS, PERKS } from '@/data/careers'
 import { IMAGES } from '@/utils/image'
 import styles from './Careers.module.css'
 
 const CULTURE_POINTS = [
-  'Work on real products used by thousands of people',
-  'Transparent, flat and approachable leadership',
-  'Learning sessions, tech talks and hackathons',
-  'A diverse, inclusive and supportive team',
+  'A small team where everyone knows each other',
+  'Honest feedback and regular code reviews',
+  'Room to learn new tools and technologies',
+  'Work that clients actually use',
 ]
 
 const POSITIONS = JOBS.map((job) => job.title)
 
 export default function Careers() {
-  const [department, setDepartment] = useState('All')
-  const [query, setQuery] = useState('')
   const [selection, setSelection] = useState({ position: '', key: 0 })
   const applyRef = useRef(null)
-
-  const normalizedQuery = query.trim().toLowerCase()
-  const visibleJobs = JOBS.filter(
-    (job) =>
-      (department === 'All' || job.department === department) &&
-      (!normalizedQuery ||
-        `${job.title} ${job.location} ${job.department}`.toLowerCase().includes(normalizedQuery)),
-  )
 
   const handleApply = (job) => {
     setSelection((prev) => ({ position: job.title, key: prev.key + 1 }))
@@ -46,21 +35,22 @@ export default function Careers() {
   return (
     <>
       <Seo
+        image="/og/careers.jpg"
         title="Careers"
-        description="Join AN Software Solutions. Explore open positions in engineering, design, cloud, data, QA and sales, and grow your career with a people-first technology company."
+        description="Join A&N Software Solutions in Hyderabad. See open roles in software engineering and data, or send us a general application."
       />
 
       <PageHero
         eyebrow="Careers"
         title={
           <>
-            Build your career. <span className="text-gradient">Build the future.</span>
+            Grow your career <span className="text-gradient">with us</span>
           </>
         }
-        description="Join a team where your ideas matter, your growth is a priority, and your work reaches real users every day."
+        description="We are a small, growing team in Hyderabad. If you enjoy solving real problems with software and data, we would like to hear from you."
       >
         <Button href="#openings" icon={ArrowDown}>
-          View Open Positions
+          See Open Roles
         </Button>
         <Button href="#apply" variant="outline">
           Apply Now
@@ -73,13 +63,13 @@ export default function Careers() {
           <div>
             <SectionHeading
               align="left"
-              eyebrow="Life at AN Software"
+              eyebrow="Working here"
               title={
                 <span id="culture-title">
-                  A workplace where <span className="text-gradient">people grow</span>
+                  Small team, <span className="text-gradient">real ownership</span>
                 </span>
               }
-              description="We believe great software is built by happy, curious and empowered people. That is why we invest in a culture of learning, ownership and mutual respect."
+              description="In a team our size, your work matters from the first week. You will learn quickly, take on responsibility and see the impact of what you build."
             />
             <Reveal as="ul" className={`check-list ${styles.points}`}>
               {CULTURE_POINTS.map((point) => (
@@ -91,20 +81,20 @@ export default function Careers() {
             </Reveal>
           </div>
           <Reveal className={styles.collage}>
-            <SmartImage src={IMAGES.teamCulture} alt="Team members celebrating together at the office" sizes="(max-width: 900px) 60vw, 25vw" />
-            <SmartImage src={IMAGES.womanTech} alt="Engineer working on a laptop" sizes="(max-width: 900px) 60vw, 25vw" />
-            <SmartImage src={IMAGES.brainstorm} alt="Team brainstorming with sticky notes" sizes="(max-width: 900px) 60vw, 25vw" />
+            <SmartImage src={IMAGES.teamCulture} alt="Colleagues talking in a bright office" sizes="(max-width: 900px) 60vw, 25vw" />
+            <SmartImage src={IMAGES.womanTech} alt="A developer working on a laptop" sizes="(max-width: 900px) 60vw, 25vw" />
+            <SmartImage src={IMAGES.brainstorm} alt="A planning session with sticky notes" sizes="(max-width: 900px) 60vw, 25vw" />
           </Reveal>
         </div>
       </section>
 
-      {/* Perks */}
+      {/* What you get */}
       <section className="section section--soft" aria-labelledby="perks-title">
         <div className="container">
           <SectionHeading
-            eyebrow="Perks & benefits"
-            title={<span id="perks-title">We take care of our people</span>}
-            description="Competitive pay is just the start. Here is what else you can look forward to."
+            eyebrow="What you get"
+            title={<span id="perks-title">Why people join us</span>}
+            description="We cannot offer the size of a big company, but we can offer something just as valuable."
           />
           <div className="grid-4">
             {PERKS.map((perk, index) => (
@@ -120,51 +110,22 @@ export default function Careers() {
       <section id="openings" className="section" aria-labelledby="openings-title">
         <div className="container">
           <SectionHeading
-            eyebrow="Open positions"
-            title={<span id="openings-title">Find your next role</span>}
-            description="Don’t see a perfect match? Send a general application — we are always looking for great talent."
+            eyebrow="Open roles"
+            title={<span id="openings-title">Current openings</span>}
+            description="No exact match? Send a general application anyway. We keep good profiles on file for future roles."
           />
-
-          <div className={styles.toolbar}>
-            <label className={styles.search}>
-              <Search size={18} aria-hidden="true" />
-              <span className="visually-hidden">Search jobs</span>
-              <input
-                type="search"
-                placeholder="Search by role or location"
-                value={query}
-                maxLength={60}
-                onChange={(e) => setQuery(e.target.value)}
-              />
-            </label>
+          <div className={styles.jobs}>
+            {JOBS.map((job) => (
+              <JobCard key={job.id} job={job} onApply={handleApply} />
+            ))}
           </div>
-          <FilterBar options={DEPARTMENTS} value={department} onChange={setDepartment} label="Filter jobs by department" />
-
-          <p className={styles.count} aria-live="polite">
-            {visibleJobs.length} {visibleJobs.length === 1 ? 'opening' : 'openings'} found
-          </p>
-
-          {visibleJobs.length > 0 ? (
-            <div className={styles.jobs}>
-              {visibleJobs.map((job) => (
-                <JobCard key={job.id} job={job} onApply={handleApply} />
-              ))}
-            </div>
-          ) : (
-            <div className={styles.empty}>
-              <p>No openings match your search right now.</p>
-              <Button href="#apply" variant="outline">
-                Send a General Application
-              </Button>
-            </div>
-          )}
         </div>
       </section>
 
       {/* Hiring process */}
       <section className="section section--dark" aria-labelledby="hiring-title">
         <div className="container">
-          <SectionHeading tone="light" eyebrow="Hiring process" title={<span id="hiring-title">Simple, transparent and quick</span>} />
+          <SectionHeading tone="light" eyebrow="Hiring process" title={<span id="hiring-title">Four simple steps</span>} />
           <ol className={styles.steps}>
             {HIRING_STEPS.map((step, index) => (
               <Reveal as="li" key={step.title} className={styles.step} delay={index * 80}>
@@ -183,9 +144,9 @@ export default function Careers() {
           <div className={styles.applyIntro}>
             <SectionHeading
               align="left"
-              eyebrow="Apply now"
-              title={<span id="apply-title">Start your journey with us</span>}
-              description="Fill in the form and upload your resume. We read every application and reply to every candidate."
+              eyebrow="Apply"
+              title={<span id="apply-title">Send us your application</span>}
+              description="Fill in the form and attach your resume. We read every application and reply to every candidate."
             />
             <div className={styles.infoCard}>
               <Mail size={22} aria-hidden="true" />

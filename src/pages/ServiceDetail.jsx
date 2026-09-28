@@ -24,7 +24,7 @@ export default function ServiceDetail() {
 
   return (
     <>
-      <Seo title={title} description={`${short} Explore ${title.toLowerCase()} services by AN Software Solutions.`} />
+      <Seo image={`/og/services-${slug}.jpg`} title={title} description={`${short} ${title} services from A&N Software Solutions, Hyderabad.`} />
 
       <PageHero
         eyebrow="Service"
@@ -40,7 +40,7 @@ export default function ServiceDetail() {
       <section className="section" aria-labelledby="overview-title">
         <div className={`container ${styles.overview}`}>
           <Reveal className={styles.media}>
-            <SmartImage src={image} alt={`${title} at AN Software Solutions`} sizes="(max-width: 900px) 90vw, 45vw" priority />
+            <SmartImage src={image} alt={`${title} at A&N Software Solutions`} sizes="(max-width: 900px) 90vw, 45vw" priority />
             <span className={styles.mediaIcon}>
               <Icon size={34} strokeWidth={1.8} aria-hidden="true" />
             </span>
@@ -71,7 +71,7 @@ export default function ServiceDetail() {
             eyebrow="Capabilities"
             title={
               <span id="capabilities-title">
-                What’s included in our <span className="text-gradient">{title.toLowerCase()}</span>
+                What we can <span className="text-gradient">help with</span>
               </span>
             }
           />
@@ -92,8 +92,8 @@ export default function ServiceDetail() {
         <div className="container">
           <SectionHeading
             eyebrow="Tools & technologies"
-            title={<span id="stack-title">Our technology stack</span>}
-            description="We pick proven tools that fit your goals, team and long-term maintenance plans."
+            title={<span id="stack-title">Tools we use</span>}
+            description="Proven tools, chosen to suit your goals, your team and how the solution will be maintained."
           />
           <Reveal as="ul" className={styles.stack}>
             {tech.map((item) => (
@@ -119,7 +119,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      <CtaBanner title={`Ready to get started with ${title.toLowerCase()}?`} />
+      <CtaBanner title={`Let’s talk about ${title.toLowerCase()} for your business`} />
     </>
   )
 }

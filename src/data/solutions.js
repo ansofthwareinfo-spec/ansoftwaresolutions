@@ -1,0 +1,100 @@
+import { IMAGES } from '@/utils/image'
+
+/**
+ * Example solutions we can build — types of projects, not past client work.
+ * Categories follow our areas of expertise.
+ */
+export const SOLUTION_CATEGORIES = ['All', 'Software', 'Data & BI', 'AI', 'Cloud', 'Automation']
+
+export const SOLUTIONS = [
+  {
+    id: 'ecommerce-store',
+    title: 'E-commerce Store',
+    category: 'Software',
+    image: IMAGES.retail,
+    summary: 'A fast online store with secure payments, stock that stays in sync and offers for returning customers.',
+    idealFor: 'Retail brands, D2C businesses and distributors',
+    features: ['Secure checkout and payment gateways', 'Inventory and order management', 'Coupons, offers and loyalty'],
+    tech: ['Next.js', 'Node.js', 'PostgreSQL', 'Razorpay'],
+  },
+  {
+    id: 'booking-app',
+    title: 'Booking & Appointment App',
+    category: 'Software',
+    image: IMAGES.mobile,
+    summary: 'Let customers book appointments, rooms or services from their phone, pay online and get reminders.',
+    idealFor: 'Clinics, salons, hotels and service businesses',
+    features: ['Real-time availability', 'Online payments', 'SMS, email and push reminders'],
+    tech: ['Flutter', 'Node.js', 'Firebase'],
+  },
+  {
+    id: 'business-erp',
+    title: 'ERP for Daily Operations',
+    category: 'Software',
+    image: IMAGES.planning,
+    summary: 'One system for inventory, purchases, production, sales and billing, instead of five spreadsheets.',
+    idealFor: 'Traders, distributors and growing SMEs',
+    features: ['Inventory and purchase management', 'Billing with GST reports', 'Role-based access for staff'],
+    tech: ['React', '.NET', 'SQL Server'],
+  },
+  {
+    id: 'sales-dashboard',
+    title: 'Sales & Finance Dashboard',
+    category: 'Data & BI',
+    image: IMAGES.finance,
+    summary: 'See revenue, expenses, targets and trends in one place, updated automatically every day.',
+    idealFor: 'Business owners, finance and sales teams',
+    features: ['Live KPIs and targets', 'Drill down by region, product or team', 'Scheduled email reports'],
+    tech: ['Power BI', 'SQL', 'Azure'],
+  },
+  {
+    id: 'data-warehouse',
+    title: 'Central Data Warehouse',
+    category: 'Data & BI',
+    image: IMAGES.analytics,
+    summary: 'Bring data from your CRM, accounting tool and apps into one clean, reliable store for reporting.',
+    idealFor: 'Companies with data spread across many tools',
+    features: ['Automated data pipelines', 'Cleaned and deduplicated data', 'Ready for BI and AI'],
+    tech: ['Python', 'Azure Data Factory', 'Snowflake'],
+  },
+  {
+    id: 'ai-document-assistant',
+    title: 'AI Document Assistant',
+    category: 'AI',
+    image: IMAGES.ai,
+    summary: 'An assistant that reads your policies, manuals and contracts and answers staff questions in seconds.',
+    idealFor: 'Health insurance, legal, HR and support teams',
+    features: ['Ask questions in plain language', 'Answers with source references', 'Secure, role-based access'],
+    tech: ['Python', 'LangChain', 'Azure OpenAI'],
+  },
+  {
+    id: 'demand-forecasting',
+    title: 'Demand Forecasting',
+    category: 'AI',
+    image: IMAGES.logistics,
+    summary: 'Predict how much stock you will need next week or next month, based on your own sales history.',
+    idealFor: 'Retailers, wholesalers and distributors',
+    features: ['Forecasts by product and location', 'Alerts for stock-outs and overstock', 'Improves as new data arrives'],
+    tech: ['Python', 'scikit-learn', 'Power BI'],
+  },
+  {
+    id: 'cloud-migration',
+    title: 'Cloud Migration & DevOps',
+    category: 'Cloud',
+    image: IMAGES.servers,
+    summary: 'Move your application off an ageing server to the cloud, with automatic deployments and backups.',
+    idealFor: 'SaaS products and growing IT teams',
+    features: ['AWS, Azure or Google Cloud', 'Automated CI/CD pipelines', 'Monitoring and backups'],
+    tech: ['AWS', 'Docker', 'Terraform'],
+  },
+  {
+    id: 'invoice-automation',
+    title: 'Invoice & Approval Automation',
+    category: 'Automation',
+    image: IMAGES.workshop,
+    summary: 'Invoices are read, checked and sent for approval automatically, then posted to your accounting system.',
+    idealFor: 'Finance and operations teams',
+    features: ['Automatic data capture', 'Approval workflows', 'Syncs with accounting software'],
+    tech: ['Power Automate', 'Python', 'REST APIs'],
+  },
+]

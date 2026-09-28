@@ -11,10 +11,10 @@ export default function ProcessSection({ soft = false }) {
           eyebrow="How we work"
           title={
             <span id="process-title">
-              A proven process for <span className="text-gradient">predictable delivery</span>
+              Five clear steps, <span className="text-gradient">no surprises</span>
             </span>
           }
-          description="Clear steps, regular demos and full transparency — so you always know what is happening and what comes next."
+          description="You always know what is happening, what comes next and what it will cost."
         />
 
         <ol className={styles.steps}>

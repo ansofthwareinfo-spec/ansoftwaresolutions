@@ -1,26 +1,26 @@
 export const GENERAL_FAQS = [
   {
-    q: 'How much does it cost to build a website or app?',
-    a: 'Cost depends on scope, features, integrations and timelines. After a free discovery call we share a detailed proposal with a transparent, itemised estimate — no hidden charges.',
+    q: 'How much will my project cost?',
+    a: 'It depends on what needs to be built. After a short call to understand your requirements, we send a written estimate with a clear breakdown, so you know exactly what you are paying for.',
   },
   {
-    q: 'How long does a typical project take?',
-    a: 'A corporate website usually takes 3–6 weeks, while a custom web or mobile application can take 2–6 months. We share a milestone-based timeline before we start.',
+    q: 'How long does a project usually take?',
+    a: 'A simple website can be ready in a few weeks. A custom application usually takes two to six months. Before we start, you get a realistic timeline with milestones.',
+  },
+  {
+    q: 'Do you work with small businesses?',
+    a: 'Yes. We work with startups, small businesses and larger organisations. We are a small team ourselves, so we understand working within a budget.',
   },
   {
     q: 'Will I own the source code?',
-    a: 'Yes. Once the project is complete and payments are settled, full ownership of the source code and intellectual property is transferred to you.',
+    a: 'Yes. Once the project is complete and paid for, the source code and intellectual property belong to you.',
   },
   {
-    q: 'Do you sign an NDA?',
-    a: 'Absolutely. We are happy to sign a Non-Disclosure Agreement before discussing your idea in detail.',
+    q: 'Can you sign an NDA?',
+    a: 'Of course. We are happy to sign a non-disclosure agreement before you share the details of your idea.',
   },
   {
-    q: 'Do you provide support after launch?',
-    a: 'Yes. We offer flexible maintenance plans covering bug fixes, security updates, monitoring and new feature development.',
-  },
-  {
-    q: 'Can you work with our in-house team?',
-    a: 'Yes. Through staff augmentation or a dedicated team model, our engineers can work alongside your team using your tools and processes.',
+    q: 'What happens after launch?',
+    a: 'We do not disappear. We can take care of bug fixes, updates, monitoring and new features on a support plan that suits you.',
   },
 ]

@@ -9,8 +9,8 @@ export default function MegaMenu({ id, open, onNavigate }) {
     <div id={id} className={cn(styles.mega, open && styles.megaOpen)} inert={!open}>
       <div className={styles.megaIntro}>
         <p className={styles.megaEyebrow}>What we do</p>
-        <p className={styles.megaTitle}>End-to-end digital services under one roof</p>
-        <p className={styles.megaText}>From strategy and design to development, cloud and growth marketing.</p>
+        <p className={styles.megaTitle}>Seven areas of expertise, one team</p>
+        <p className={styles.megaText}>From strategy to execution: software, data, AI, cloud and automation.</p>
         <Link to="/services" className={styles.megaAll} onClick={onNavigate}>
           View all services <ArrowRight size={16} aria-hidden="true" />
         </Link>

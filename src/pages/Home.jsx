@@ -3,29 +3,27 @@ import Seo from '@/components/common/Seo'
 import AboutPreview from '@/sections/home/AboutPreview'
 import Hero from '@/sections/home/Hero'
 import IndustriesPreview from '@/sections/home/IndustriesPreview'
-import PortfolioPreview from '@/sections/home/PortfolioPreview'
 import ServicesPreview from '@/sections/home/ServicesPreview'
+import SolutionsPreview from '@/sections/home/SolutionsPreview'
 import TechMarquee from '@/sections/home/TechMarquee'
 import FaqSection from '@/sections/shared/FaqSection'
+import HighlightsSection from '@/sections/shared/HighlightsSection'
 import ProcessSection from '@/sections/shared/ProcessSection'
-import StatsSection from '@/sections/shared/StatsSection'
-import TestimonialsSection from '@/sections/shared/TestimonialsSection'
 import WhyChooseUsSection from '@/sections/shared/WhyChooseUsSection'
 
 export default function Home() {
   return (
     <>
-      <Seo />
+      <Seo image="/og/home.jpg" />
       <Hero />
       <TechMarquee />
       <AboutPreview />
       <ServicesPreview />
-      <StatsSection />
+      <HighlightsSection />
       <WhyChooseUsSection soft={false} />
       <ProcessSection soft />
       <IndustriesPreview />
-      <PortfolioPreview />
-      <TestimonialsSection />
+      <SolutionsPreview />
       <FaqSection />
       <CtaBanner />
     </>

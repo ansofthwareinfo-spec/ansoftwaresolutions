@@ -110,7 +110,7 @@ export default function Navbar() {
 
           <div className={styles.actions}>
             <Button to="/contact" size="sm" icon={ArrowRight} className={styles.cta}>
-              Get a Quote
+              Let’s Talk
             </Button>
             <button
               ref={menuButtonRef}

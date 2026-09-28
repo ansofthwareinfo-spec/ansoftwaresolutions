@@ -5,9 +5,9 @@ import Reveal from './Reveal'
 import styles from './CtaBanner.module.css'
 
 export default function CtaBanner({
-  title = 'Have a project in mind? Let’s build it together.',
-  text = 'Tell us about your idea and get a free consultation, a clear roadmap and a transparent estimate within 48 hours.',
-  primaryLabel = 'Get a Free Quote',
+  title = 'Have a problem worth solving? Let’s talk.',
+  text = 'Tell us what you are working on. The first consultation is free, and we will give you honest advice on the best way forward.',
+  primaryLabel = 'Book a Free Consultation',
   primaryTo = '/contact',
 }) {
   return (

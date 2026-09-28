@@ -104,12 +104,12 @@
 }
 
 .dark .icon {
-  color: #6fe0d4;
-  background: rgba(15, 179, 162, 0.12);
+  color: var(--c-on-dark-accent);
+  background: rgba(2, 195, 222, 0.12);
 }
 
 .dark:hover {
   background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(111, 224, 212, 0.35);
+  border-color: rgba(95, 211, 243, 0.35);
   box-shadow: none;
 }

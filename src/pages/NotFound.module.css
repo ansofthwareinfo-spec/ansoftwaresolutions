@@ -3,7 +3,7 @@
   place-items: center;
   min-height: 100vh;
   padding: calc(var(--nav-h) + 3rem) 0 4rem;
-  background: linear-gradient(180deg, #f1f5fd 0%, #fff 100%);
+  background: linear-gradient(180deg, #eef5fc 0%, #fff 100%);
   text-align: center;
 }
 

@@ -68,7 +68,7 @@ export default function ContactForm() {
       <div className={styles.grid}>
         <FormField {...register('fullName')} label="Full name" placeholder="Your full name" autoComplete="name" maxLength={LIMITS.name} required />
         <FormField {...register('email')} type="email" label="Email address" placeholder="you@company.com" autoComplete="email" maxLength={LIMITS.email} required />
-        <FormField {...register('phone')} type="tel" label="Phone number" placeholder="+91 98765 43210" autoComplete="tel" maxLength={LIMITS.phone} required />
+        <FormField {...register('phone')} type="tel" label="Phone number" placeholder="+91 90000 00000" autoComplete="tel" maxLength={LIMITS.phone} required />
         <FormField {...register('company')} label="Company" placeholder="Company name (optional)" autoComplete="organization" maxLength={LIMITS.company} />
 
         <FormField {...register('service')} as="select" label="Service you need" required>

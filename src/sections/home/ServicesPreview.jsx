@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import ServiceCard from '@/components/cards/ServiceCard'
+import ServiceHelpCard from '@/components/cards/ServiceHelpCard'
 import Button from '@/components/common/Button'
 import Reveal from '@/components/common/Reveal'
 import SectionHeading from '@/components/common/SectionHeading'
@@ -10,26 +11,29 @@ export default function ServicesPreview() {
     <section className="section section--soft" aria-labelledby="services-preview-title">
       <div className="container">
         <SectionHeading
-          eyebrow="Our services"
+          eyebrow="What we do"
           title={
             <span id="services-preview-title">
-              Everything you need to <span className="text-gradient">build, launch and grow</span>
+              Seven areas of expertise, <span className="text-gradient">one team</span>
             </span>
           }
-          description="One partner for the full product lifecycle — strategy, design, engineering, cloud, quality and growth marketing."
+          description="From building software to making sense of your data, we help with the full picture: strategy, delivery and support."
         />
 
-        <div className="grid-3">
+        <div className="grid-4">
           {SERVICES.map((service, index) => (
-            <Reveal key={service.slug} delay={(index % 3) * 90}>
+            <Reveal key={service.slug} delay={(index % 4) * 80}>
               <ServiceCard service={service} index={index} />
             </Reveal>
           ))}
+          <Reveal delay={240}>
+            <ServiceHelpCard />
+          </Reveal>
         </div>
 
         <div className="section-actions">
           <Button to="/services" variant="outline" icon={ArrowRight}>
-            View All Services
+            Explore Our Services
           </Button>
         </div>
       </div>

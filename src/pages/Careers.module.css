@@ -35,51 +35,6 @@
 }
 
 /* Openings */
-.toolbar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-}
-
-.search {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  width: min(100%, 480px);
-  padding: 0.35rem 0.5rem 0.35rem 1.1rem;
-  color: var(--c-muted);
-  background: #fff;
-  border: 1.5px solid var(--c-line);
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-sm);
-  transition: border-color var(--dur) var(--ease);
-}
-
-.search:focus-within {
-  border-color: var(--c-primary);
-}
-
-.search input {
-  flex: 1;
-  min-width: 0;
-  padding: 0.6rem 0.25rem;
-  border: 0;
-  background: transparent;
-  color: var(--c-ink);
-}
-
-.search input:focus {
-  outline: none;
-}
-
-.count {
-  margin: -1.5rem 0 1.5rem;
-  text-align: center;
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  color: var(--c-muted);
-}
-
 .jobs {
   display: grid;
   gap: 1rem;
@@ -87,20 +42,10 @@
   margin-inline: auto;
 }
 
-.empty {
-  display: grid;
-  justify-items: center;
-  gap: 1rem;
-  padding: 3rem 1rem;
-  text-align: center;
-  background: var(--c-bg-soft);
-  border-radius: var(--radius-lg);
-}
-
 /* Hiring steps */
 .steps {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
 }
 

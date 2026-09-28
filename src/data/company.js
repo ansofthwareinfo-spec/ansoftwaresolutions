@@ -1,141 +1,153 @@
 import {
-  Award,
   Compass,
   Eye,
+  FileCheck2,
   Handshake,
-  HeartHandshake,
   Lightbulb,
   LifeBuoy,
+  MessagesSquare,
   PenTool,
   Rocket,
+  Scale,
   Search,
   ShieldCheck,
   Sparkles,
   Target,
   TrendingUp,
+  UserCheck,
   Users,
   Wrench,
   Zap,
 } from 'lucide-react'
-import { IMAGES } from '@/utils/image'
 
-/* NOTE: numbers, names and milestones below are example content — replace with your real data. */
+/* Company facts — these match our LinkedIn page. Keep both in sync. */
+export const COMPANY_FACTS = [
+  { label: 'Founded', value: '2022' },
+  { label: 'Headquarters', value: 'Hyderabad, Telangana' },
+]
 
-export const STATS = [
-  { value: 150, suffix: '+', label: 'Projects Delivered' },
-  { value: 80, suffix: '+', label: 'Happy Clients' },
-  { value: 45, suffix: '+', label: 'Tech Experts' },
-  { value: 98, suffix: '%', label: 'Client Retention' },
+export const SPECIALTIES = [
+  'Software Engineering',
+  'Data & Analytics',
+  'Artificial Intelligence',
+  'Business Intelligence',
+  'Cloud Computing',
+  'Automation',
+  'Digital Transformation',
+]
+
+/* "Services provided" as listed on LinkedIn (Health Insurance appears on the Industries page). */
+export const SERVICES_PROVIDED = [
+  'Custom Software Development',
+  'Cloud Application Development',
+  'Cloud Management',
+  'Database Development',
+  'Business Analytics',
+  'Data Reporting',
+  'Information Management',
+  'File Management',
+]
+
+/** Short highlights for the dark "at a glance" band. */
+export const HIGHLIGHTS = [
+  { value: '2022', label: 'Founded in Hyderabad' },
+  { value: '7', label: 'Areas of expertise' },
+  { value: '8', label: 'Services we provide' },
+  { value: 'Free', label: 'First consultation' },
 ]
 
 export const MISSION_VISION = [
   {
     icon: Target,
     title: 'Our Mission',
-    text: 'To empower businesses of every size with reliable, secure and scalable technology — delivered transparently, on time, and with measurable impact on their growth.',
+    text: 'To help organisations turn challenges into opportunities through technology, data and intelligent solutions, and to deliver value that lasts.',
   },
   {
     icon: Eye,
     title: 'Our Vision',
-    text: 'To be a globally trusted technology partner from India, recognised for engineering excellence, honest partnerships and a people-first culture.',
+    text: 'To be the technology partner businesses rely on for honest advice and dependable delivery, where efficiency is powered by innovation.',
   },
 ]
 
 export const GOALS = [
   {
-    icon: TrendingUp,
-    title: 'Deliver Measurable Value',
-    text: 'Tie every engagement to clear business outcomes — revenue, efficiency or customer experience — and report on them openly.',
+    icon: Target,
+    title: 'Start with the problem',
+    text: 'Understand the business challenge first, then choose the technology. Success is measured by the difference it makes.',
   },
   {
     icon: ShieldCheck,
-    title: 'Quality & Security First',
-    text: 'Follow code reviews, automated testing and secure-by-design practices on every project, without exception.',
+    title: 'Build it properly',
+    text: 'Review code, test thoroughly and build security in from the start. Solutions should be scalable, secure and easy to maintain.',
   },
   {
-    icon: Handshake,
-    title: 'Build Long-Term Partnerships',
-    text: 'Earn repeat business through trust, responsiveness and support that continues long after launch.',
+    icon: MessagesSquare,
+    title: 'Be easy to work with',
+    text: 'Communicate clearly, share progress often and raise problems early instead of hiding them.',
   },
   {
-    icon: Users,
-    title: 'Grow Our People',
-    text: 'Invest in continuous learning, certifications and mentorship so our team stays ahead of the technology curve.',
+    icon: Zap,
+    title: 'Make work more efficient',
+    text: 'Use automation, data and AI to help every client get more done with less effort.',
   },
   {
     icon: Lightbulb,
-    title: 'Innovate Responsibly',
-    text: 'Adopt AI, cloud-native and automation technologies where they create real value — ethically and securely.',
+    title: 'Keep learning',
+    text: 'Stay current with emerging technologies so clients benefit from what genuinely works today.',
   },
   {
-    icon: Rocket,
-    title: 'Scale Globally',
-    text: 'Expand our delivery footprint to serve clients across India, the Middle East, Europe and North America.',
+    icon: Handshake,
+    title: 'Stay for the long run',
+    text: 'Work alongside clients from strategy to execution, and stay involved well after launch.',
   },
 ]
 
 export const VALUES = [
-  { icon: HeartHandshake, title: 'Integrity', text: 'We are honest about timelines, costs and challenges — always.' },
-  { icon: Award, title: 'Ownership', text: 'We treat every client product as if it were our own.' },
-  { icon: Sparkles, title: 'Craftsmanship', text: 'Clean code, thoughtful design and attention to detail.' },
-  { icon: Users, title: 'Collaboration', text: 'One team with our clients, sharing context and credit.' },
-  { icon: Lightbulb, title: 'Curiosity', text: 'We keep learning so our clients keep leading.' },
-  { icon: Zap, title: 'Agility', text: 'We adapt quickly and deliver value in short, steady cycles.' },
+  { icon: Scale, title: 'Honesty', text: 'We tell you what we think, even when it means recommending less work.' },
+  { icon: UserCheck, title: 'Ownership', text: 'We treat your project as if it were our own business.' },
+  { icon: Sparkles, title: 'Quality', text: 'Clean code, careful testing and attention to the small details.' },
+  { icon: Lightbulb, title: 'Curiosity', text: 'We question the usual way of doing things and keep learning.' },
+  { icon: Users, title: 'Partnership', text: 'We work with you as one team and share the credit.' },
+  { icon: Compass, title: 'Pragmatism', text: 'The simplest solution that solves the problem is usually the best one.' },
 ]
 
 export const WHY_CHOOSE_US = [
   {
-    icon: Award,
-    title: 'Experienced Engineers',
-    text: 'Skilled developers, designers and testers with hands-on experience across modern stacks.',
-  },
-  {
-    icon: Zap,
-    title: 'Agile, On-Time Delivery',
-    text: 'Two-week sprints, weekly demos and clear milestones keep projects predictable.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Security & NDA Protection',
-    text: 'Strict NDAs, secure coding standards and full IP ownership transferred to you.',
+    icon: MessagesSquare,
+    title: 'Talk to the people doing the work',
+    text: 'We are a small team, so you speak directly with the engineers designing and building your solution.',
   },
   {
     icon: TrendingUp,
-    title: 'Transparent Pricing',
-    text: 'No hidden costs. Flexible engagement models that match your budget and goals.',
+    title: 'Strategy and delivery together',
+    text: 'We help you decide what to build and then build it, so nothing gets lost between planning and execution.',
   },
   {
-    icon: HeartHandshake,
-    title: 'Dedicated Point of Contact',
-    text: 'A project manager who knows your product and answers your questions fast.',
+    icon: Scale,
+    title: 'Clear pricing, no surprises',
+    text: 'You get a written estimate before we start, and any change in scope is agreed with you first.',
+  },
+  {
+    icon: FileCheck2,
+    title: 'Your code, your IP',
+    text: 'We are happy to sign an NDA, and the source code belongs to you once the project is complete.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Built to last',
+    text: 'Scalable, secure and documented solutions that any team can maintain later.',
   },
   {
     icon: LifeBuoy,
-    title: 'Post-Launch Support',
-    text: 'Maintenance, monitoring and enhancements long after your product goes live.',
+    title: 'Support after launch',
+    text: 'We stay around for fixes, updates and improvements once your solution is live.',
   },
 ]
 
 export const PROCESS = [
-  { icon: Search, title: 'Discover', text: 'We understand your business, users and goals through workshops and research.' },
-  { icon: Compass, title: 'Plan', text: 'We define scope, architecture, milestones and a realistic delivery roadmap.' },
-  { icon: PenTool, title: 'Design', text: 'Wireframes and prototypes are validated with you before a line of code is written.' },
-  { icon: Wrench, title: 'Develop & Test', text: 'Agile sprints with continuous QA, code reviews and weekly demos.' },
-  { icon: Rocket, title: 'Launch & Support', text: 'Smooth deployment, monitoring and ongoing improvements after go-live.' },
-]
-
-export const TIMELINE = [
-  { year: '2020', title: 'The Beginning', text: 'AN Software Solutions was founded with a small team and a big promise: honest, high-quality software.' },
-  { year: '2021', title: 'First Enterprise Clients', text: 'Delivered our first ERP and e-commerce platforms and expanded into mobile app development.' },
-  { year: '2022', title: 'Cloud & DevOps Practice', text: 'Launched a dedicated cloud practice helping clients migrate and automate their infrastructure.' },
-  { year: '2023', title: 'Growing Team', text: 'Crossed 100 projects and opened a new delivery center to support growing demand.' },
-  { year: '2024', title: 'AI & Data Solutions', text: 'Introduced data analytics and generative AI services to help clients automate smarter.' },
-  { year: 'Today', title: 'Global Partner', text: 'Serving clients across multiple countries with a growing team of passionate technologists.' },
-]
-
-export const LEADERSHIP = [
-  { name: 'Founder Name', role: 'Founder & CEO', image: IMAGES.portrait1 },
-  { name: 'Co-Founder Name', role: 'Co-Founder & CTO', image: IMAGES.portrait2 },
-  { name: 'Leader Name', role: 'Head of Delivery', image: IMAGES.portrait3 },
-  { name: 'Leader Name', role: 'Head of Design', image: IMAGES.portrait4 },
+  { icon: Search, title: 'Discover', text: 'We learn about your business, your users and what success looks like for you.' },
+  { icon: Compass, title: 'Plan', text: 'We agree on scope, timeline and cost in writing before any work begins.' },
+  { icon: PenTool, title: 'Design', text: 'You see wireframes and a clickable prototype early, so there are no surprises.' },
+  { icon: Wrench, title: 'Build & Test', text: 'We build in short cycles, test as we go and show you progress regularly.' },
+  { icon: Rocket, title: 'Launch & Support', text: 'We handle the launch and stay on hand for fixes, updates and improvements.' },
 ]

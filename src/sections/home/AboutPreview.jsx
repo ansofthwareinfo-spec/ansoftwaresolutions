@@ -3,15 +3,16 @@ import Button from '@/components/common/Button'
 import Reveal from '@/components/common/Reveal'
 import SectionHeading from '@/components/common/SectionHeading'
 import SmartImage from '@/components/common/SmartImage'
+import { SITE } from '@/config/site'
 import { MISSION_VISION } from '@/data/company'
 import { IMAGES } from '@/utils/image'
 import styles from './AboutPreview.module.css'
 
 const HIGHLIGHTS = [
-  'Dedicated project manager for every client',
-  'Agile delivery with weekly progress demos',
-  'Secure, scalable and well-documented code',
-  'Flexible engagement models for any budget',
+  'You work directly with the people building it',
+  'Clear estimates before any work starts',
+  'Regular progress updates you can follow',
+  'Solutions that are easy to maintain',
 ]
 
 export default function AboutPreview() {
@@ -20,14 +21,14 @@ export default function AboutPreview() {
       <div className={`container ${styles.layout}`}>
         <Reveal className={styles.media}>
           <div className={styles.imgMain}>
-            <SmartImage src={IMAGES.officeTeam} alt="Our team planning a client project together" sizes="(max-width: 900px) 90vw, 40vw" />
+            <SmartImage src={IMAGES.officeTeam} alt="A small team planning a project around a laptop" sizes="(max-width: 900px) 90vw, 40vw" />
           </div>
           <div className={styles.imgSmall}>
-            <SmartImage src={IMAGES.developer} alt="Developer writing code on a laptop" sizes="(max-width: 900px) 50vw, 20vw" />
+            <SmartImage src={IMAGES.codeLaptop} alt="Code on a laptop screen" sizes="(max-width: 900px) 50vw, 20vw" />
           </div>
           <div className={styles.badge}>
-            <strong>100%</strong>
-            <span>Commitment to quality</span>
+            <strong>{SITE.foundedYear}</strong>
+            <span>Founded in {SITE.contact.address.city}</span>
           </div>
         </Reveal>
 
@@ -37,10 +38,10 @@ export default function AboutPreview() {
             eyebrow="About us"
             title={
               <span id="about-preview-title">
-                Your long-term partner for <span className="text-gradient">digital transformation</span>
+                Technology that makes <span className="text-gradient">work easier</span>
               </span>
             }
-            description="AN Software Solutions is a team of engineers, designers and strategists who turn business challenges into reliable digital products. We work closely with startups, SMEs and enterprises to deliver technology that is simple to use, secure by design and built to scale."
+            description="A&N Software Solutions helps organisations turn challenges into opportunities through technology, data and intelligent solutions. We combine technical skill with a practical understanding of how businesses run, so what we build actually gets used."
           />
 
           <Reveal className={styles.mv}>

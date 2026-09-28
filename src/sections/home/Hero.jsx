@@ -1,10 +1,12 @@
-import { ArrowRight, CheckCircle2, Rocket, Sparkles, Star } from 'lucide-react'
+import { ArrowRight, CheckCircle2, MapPin, Sparkles } from 'lucide-react'
 import Button from '@/components/common/Button'
 import SmartImage from '@/components/common/SmartImage'
+import { SITE } from '@/config/site'
 import { IMAGES } from '@/utils/image'
 import styles from './Hero.module.css'
 
-const AVATARS = [IMAGES.portrait1, IMAGES.portrait2, IMAGES.portrait3, IMAGES.portrait4]
+const PROMISES = ['Free first consultation', 'NDA on request', 'You own the code']
+const FOCUS_AREAS = ['Software', 'Data', 'AI', 'Cloud']
 
 export default function Hero() {
   return (
@@ -19,52 +21,42 @@ export default function Hero() {
         <div className={styles.copy}>
           <p className={styles.badge}>
             <Sparkles size={16} aria-hidden="true" />
-            Software development &amp; IT services company
+            {SITE.tagline}
           </p>
 
           <h1 id="hero-title" className={styles.title}>
-            We build software that <span className="text-gradient">moves your business</span> forward
+            Turn business challenges into <span className="text-gradient">real opportunities</span>
           </h1>
 
           <p className={styles.lead}>
-            From idea to launch and beyond — AN Software Solutions designs, develops and scales web, mobile, cloud and AI
-            solutions that solve real problems and deliver measurable growth.
+            We are a Hyderabad-based team that helps businesses work smarter with software, data, AI and cloud. Tell
+            us what is slowing you down, and we will help you plan it, build it and run it.
           </p>
 
           <div className={styles.actions}>
             <Button to="/contact" size="lg" icon={ArrowRight}>
-              Start Your Project
+              Talk to Us
             </Button>
             <Button to="/services" size="lg" variant="outline">
-              Explore Services
+              See What We Do
             </Button>
           </div>
 
-          <div className={styles.trust}>
-            <div className={styles.avatars} aria-hidden="true">
-              {AVATARS.map((src) => (
-                <SmartImage key={src} src={src} alt="" width={44} height={44} sizes="44px" />
-              ))}
-            </div>
-            <div>
-              <p className={styles.rating}>
-                <span className={styles.stars} aria-hidden="true">
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <Star key={i} size={15} fill="currentColor" />
-                  ))}
-                </span>
-                <strong>4.9/5</strong>
-              </p>
-              <p className={styles.trustText}>Rated by 80+ happy clients</p>
-            </div>
-          </div>
+          <ul className={styles.promises}>
+            {PROMISES.map((item) => (
+              <li key={item}>
+                <CheckCircle2 size={18} aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className={styles.visual}>
           <div className={styles.frame}>
             <SmartImage
               src={IMAGES.heroTeam}
-              alt="AN Software Solutions team collaborating on a software project"
+              alt="Developers working together on laptops"
               width={640}
               height={720}
               sizes="(max-width: 960px) 90vw, 520px"
@@ -74,25 +66,23 @@ export default function Hero() {
 
           <div className={`${styles.float} ${styles.floatTop}`}>
             <span className={styles.floatIcon}>
-              <Rocket size={20} aria-hidden="true" />
+              <MapPin size={20} aria-hidden="true" />
             </span>
             <div>
-              <strong>150+</strong>
-              <span>Projects delivered</span>
+              <strong>Since {SITE.foundedYear}</strong>
+              <span>
+                {SITE.contact.address.city}, {SITE.contact.address.country}
+              </span>
             </div>
           </div>
 
           <div className={`${styles.float} ${styles.floatBottom}`}>
-            <div className={styles.progressHead}>
-              <span>On-time delivery</span>
-              <strong>98%</strong>
-            </div>
-            <div className={styles.progress} aria-hidden="true">
-              <span />
-            </div>
-            <p className={styles.floatNote}>
-              <CheckCircle2 size={14} aria-hidden="true" /> Agile sprints &amp; weekly demos
-            </p>
+            <p className={styles.floatLabel}>From strategy to execution</p>
+            <ul className={styles.focus}>
+              {FOCUS_AREAS.map((area) => (
+                <li key={area}>{area}</li>
+              ))}
+            </ul>
           </div>
 
           <div className={styles.code} aria-hidden="true">
@@ -102,7 +92,7 @@ export default function Hero() {
               <i />
             </span>
             <code>
-              <span className={styles.k}>const</span> growth = <span className={styles.f}>build</span>(
+              <span className={styles.k}>const</span> efficiency = <span className={styles.f}>innovate</span>(
               <span className={styles.s}>&apos;your idea&apos;</span>)
             </code>
           </div>

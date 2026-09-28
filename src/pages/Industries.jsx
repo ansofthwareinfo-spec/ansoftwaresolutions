@@ -6,25 +6,25 @@ import Reveal from '@/components/common/Reveal'
 import Seo from '@/components/common/Seo'
 import SmartImage from '@/components/common/SmartImage'
 import { INDUSTRIES } from '@/data/industries'
-import StatsSection from '@/sections/shared/StatsSection'
 import styles from './Industries.module.css'
 
 export default function Industries() {
   return (
     <>
       <Seo
-        title="Industries We Serve"
-        description="Software solutions for healthcare, fintech, retail & e-commerce, education, logistics, real estate, manufacturing and travel — by AN Software Solutions."
+        image="/og/industries.jpg"
+        title="Industries"
+        description="How software, data and cloud solutions help health insurance, healthcare, banking and finance, retail and education. A&N Software Solutions, Hyderabad."
       />
 
       <PageHero
         eyebrow="Industries"
         title={
           <>
-            Solutions tailored to <span className="text-gradient">your industry</span>
+            Technology that fits <span className="text-gradient">your industry</span>
           </>
         }
-        description="We combine technical expertise with domain understanding to build software that fits the way your industry works."
+        description="Every sector has its own way of working. Here are a few where our specialties can make a real difference."
       />
 
       <section className="section" aria-label="Industries">
@@ -57,8 +57,10 @@ export default function Industries() {
         </div>
       </section>
 
-      <StatsSection />
-      <CtaBanner title="Don’t see your industry listed?" text="Our adaptable teams have delivered solutions across many domains. Tell us about your business and we will show you how we can help." />
+      <CtaBanner
+        title="Don’t see your industry here?"
+        text="Our skills apply across many sectors. Tell us about your business and we will tell you honestly whether we can help."
+      />
     </>
   )
 }

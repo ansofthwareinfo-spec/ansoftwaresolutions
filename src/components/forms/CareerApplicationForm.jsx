@@ -98,7 +98,7 @@ export default function CareerApplicationForm({ positions, selectedPosition, sel
       <div className={styles.grid}>
         <FormField {...register('fullName')} label="Full name" placeholder="Your full name" autoComplete="name" maxLength={LIMITS.name} required />
         <FormField {...register('email')} type="email" label="Email address" placeholder="you@example.com" autoComplete="email" maxLength={LIMITS.email} required />
-        <FormField {...register('phone')} type="tel" label="Phone number" placeholder="+91 98765 43210" autoComplete="tel" maxLength={LIMITS.phone} required />
+        <FormField {...register('phone')} type="tel" label="Phone number" placeholder="+91 90000 00000" autoComplete="tel" maxLength={LIMITS.phone} required />
 
         <FormField {...register('position')} as="select" label="Position applying for" required>
           <option value="">Select a position</option>
@@ -139,7 +139,7 @@ export default function CareerApplicationForm({ positions, selectedPosition, sel
             file={values.resume}
             error={register('resume').error}
             accept={RESUME_ACCEPT}
-            hint="PDF, DOC or DOCX — max 5 MB"
+            hint="PDF, DOC or DOCX, up to 5 MB"
             onFile={(name, file) => setFieldValue(name, file, { touch: true })}
             required
           />

@@ -13,13 +13,13 @@ export default function IndustriesPreview() {
         <div className={styles.head}>
           <SectionHeading
             align="left"
-            eyebrow="Industries we serve"
+            eyebrow="Industries"
             title={
               <span id="industries-preview-title">
-                Domain expertise across <span className="text-gradient">key industries</span>
+                Where our work <span className="text-gradient">makes a difference</span>
               </span>
             }
-            description="We understand the regulations, workflows and customer expectations unique to each sector we work in."
+            description="Software, data and automation help in almost every sector. Here are a few where they have a big impact."
           />
           <Button to="/industries" variant="outline" icon={ArrowRight} className={styles.cta}>
             All Industries
@@ -28,7 +28,7 @@ export default function IndustriesPreview() {
 
         <ul className={styles.grid}>
           {INDUSTRIES.map(({ id, title, icon: Icon, text }, index) => (
-            <Reveal as="li" key={id} delay={(index % 4) * 70}>
+            <Reveal as="li" key={id} delay={(index % 3) * 80}>
               <Link to={`/industries#${id}`} className={styles.tile}>
                 <span className={styles.icon}>
                   <Icon size={26} strokeWidth={1.8} aria-hidden="true" />

@@ -1,5 +1,6 @@
 import { ArrowRight, Check } from 'lucide-react'
 import ServiceCard from '@/components/cards/ServiceCard'
+import ServiceHelpCard from '@/components/cards/ServiceHelpCard'
 import Button from '@/components/common/Button'
 import CtaBanner from '@/components/common/CtaBanner'
 import PageHero from '@/components/common/PageHero'
@@ -16,18 +17,19 @@ export default function Services() {
   return (
     <>
       <Seo
+        image="/og/services.jpg"
         title="Our Services"
-        description="Custom software, web and mobile app development, cloud & DevOps, UI/UX design, AI, QA testing, IT consulting and digital marketing services by AN Software Solutions."
+        description="Software engineering, data & analytics, artificial intelligence, business intelligence, cloud computing, automation and digital transformation services from A&N Software Solutions, Hyderabad."
       />
 
       <PageHero
         eyebrow="Our services"
         title={
           <>
-            Digital services that <span className="text-gradient">scale with you</span>
+            What we can <span className="text-gradient">do for you</span>
           </>
         }
-        description="Whether you are launching a new product or modernising an existing one, our specialists cover every stage of the journey."
+        description="Seven areas of expertise under one roof. We help you decide what to do, build it properly and keep it running well."
       >
         <Button to="/contact" icon={ArrowRight}>
           Discuss Your Project
@@ -35,12 +37,15 @@ export default function Services() {
       </PageHero>
 
       <section className="section" aria-label="All services">
-        <div className="container grid-3">
+        <div className="container grid-4">
           {SERVICES.map((service, index) => (
-            <Reveal key={service.slug} delay={(index % 3) * 90}>
+            <Reveal key={service.slug} delay={(index % 4) * 80}>
               <ServiceCard service={service} index={index} />
             </Reveal>
           ))}
+          <Reveal delay={240}>
+            <ServiceHelpCard />
+          </Reveal>
         </div>
       </section>
 
@@ -53,12 +58,12 @@ export default function Services() {
                 Flexible ways to <span className="text-gradient">work together</span>
               </span>
             }
-            description="Choose the model that best fits your scope, timeline and budget — and switch as your needs evolve."
+            description="Choose the model that best fits your scope, timeline and budget. You can switch as your needs evolve."
           />
           <div className={styles.models}>
             {ENGAGEMENT_MODELS.map((model, index) => (
               <Reveal key={model.title} delay={index * 100} className={cn(styles.model, model.featured && styles.featured)}>
-                {model.featured && <span className={styles.tag}>Most popular</span>}
+                {model.tag && <span className={styles.tag}>{model.tag}</span>}
                 <h3 className={styles.modelTitle}>{model.title}</h3>
                 <p className={styles.modelText}>{model.text}</p>
                 <ul className={`check-list ${styles.modelList}`}>

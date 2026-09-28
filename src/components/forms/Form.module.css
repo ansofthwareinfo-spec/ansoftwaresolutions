@@ -57,7 +57,7 @@
   outline: none;
   background: #fff;
   border-color: var(--c-primary);
-  box-shadow: 0 0 0 4px rgba(43, 89, 195, 0.14);
+  box-shadow: 0 0 0 4px rgba(9, 105, 168, 0.14);
 }
 
 .textarea {
