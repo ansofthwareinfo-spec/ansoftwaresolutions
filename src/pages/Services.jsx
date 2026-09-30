@@ -1,4 +1,5 @@
 import { ArrowRight, Check } from 'lucide-react'
+import FeatureCard from '@/components/cards/FeatureCard'
 import ServiceCard from '@/components/cards/ServiceCard'
 import ServiceHelpCard from '@/components/cards/ServiceHelpCard'
 import Button from '@/components/common/Button'
@@ -7,9 +8,11 @@ import PageHero from '@/components/common/PageHero'
 import Reveal from '@/components/common/Reveal'
 import SectionHeading from '@/components/common/SectionHeading'
 import Seo from '@/components/common/Seo'
+import { GOALS } from '@/data/company'
 import { ENGAGEMENT_MODELS, SERVICES } from '@/data/services'
 import FaqSection from '@/sections/shared/FaqSection'
 import ProcessSection from '@/sections/shared/ProcessSection'
+import WhyChooseUsSection from '@/sections/shared/WhyChooseUsSection'
 import { cn } from '@/utils/cn'
 import styles from './Services.module.css'
 
@@ -49,6 +52,9 @@ export default function Services() {
         </div>
       </section>
 
+      <WhyChooseUsSection />
+      <ProcessSection />
+
       <section className="section section--soft" aria-labelledby="models-title">
         <div className="container">
           <SectionHeading
@@ -83,7 +89,28 @@ export default function Services() {
         </div>
       </section>
 
-      <ProcessSection />
+      {/* Commitments */}
+      <section className="section" aria-labelledby="commitments-title">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Our commitments"
+            title={
+              <span id="commitments-title">
+                What we hold <span className="text-gradient">ourselves to</span>
+              </span>
+            }
+            description="Simple commitments that shape how we plan, build and support every project."
+          />
+          <div className="grid-3">
+            {GOALS.map((goal, index) => (
+              <Reveal key={goal.title} delay={(index % 3) * 90}>
+                <FeatureCard {...goal} number={index + 1} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <FaqSection soft />
       <CtaBanner />
     </>

@@ -1,5 +1,4 @@
 import { ArrowRight, Check, Cpu, Users } from 'lucide-react'
-import FeatureCard from '@/components/cards/FeatureCard'
 import Button from '@/components/common/Button'
 import CtaBanner from '@/components/common/CtaBanner'
 import PageHero from '@/components/common/PageHero'
@@ -8,10 +7,9 @@ import SectionHeading from '@/components/common/SectionHeading'
 import Seo from '@/components/common/Seo'
 import SmartImage from '@/components/common/SmartImage'
 import { SITE } from '@/config/site'
-import { COMPANY_FACTS, GOALS, MISSION_VISION, SERVICES_PROVIDED, SPECIALTIES, VALUES } from '@/data/company'
+import { COMPANY_FACTS, MISSION_VISION, SERVICES_PROVIDED, SPECIALTIES } from '@/data/company'
 import { HIRING_MODELS, HIRING_SERVICES } from '@/data/hiring'
 import { SERVICES } from '@/data/services'
-import WhyChooseUsSection from '@/sections/shared/WhyChooseUsSection'
 import { IMAGES } from '@/utils/image'
 import styles from './About.module.css'
 
@@ -210,44 +208,11 @@ export default function About() {
         </div>
       </section>
 
-      {/* Goals & Objectives */}
-      <section className="section" aria-labelledby="goals-title">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Goals & objectives"
-            title={
-              <span id="goals-title">
-                What we hold <span className="text-gradient">ourselves to</span>
-              </span>
-            }
-            description="Simple commitments that shape how we plan, build and support every project."
-          />
-          <div className="grid-3">
-            {GOALS.map((goal, index) => (
-              <Reveal key={goal.title} delay={(index % 3) * 90}>
-                <FeatureCard {...goal} number={index + 1} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Core values */}
-      <section className="section section--soft" aria-labelledby="values-title">
-        <div className="container">
-          <SectionHeading eyebrow="Our values" title={<span id="values-title">How we like to work</span>} />
-          <div className="grid-3">
-            {VALUES.map((value, index) => (
-              <Reveal key={value.title} delay={(index % 3) * 90}>
-                <FeatureCard {...value} variant="soft" />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <WhyChooseUsSection soft={false} />
-      <CtaBanner />
+      <CtaBanner
+        title="Looking for people or a technology partner?"
+        text="Tell us what you need. We usually reply within one business day."
+        primaryLabel="Get in Touch"
+      />
     </>
   )
 }

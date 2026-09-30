@@ -3,7 +3,6 @@ import {
   Eye,
   FileCheck2,
   Handshake,
-  Lightbulb,
   LifeBuoy,
   MessagesSquare,
   PenTool,
@@ -11,10 +10,8 @@ import {
   Scale,
   Search,
   ShieldCheck,
-  Sparkles,
   Target,
   TrendingUp,
-  UserCheck,
   Users,
   Wrench,
   Zap,
@@ -100,15 +97,6 @@ export const GOALS = [
     title: 'Stay for the long run',
     text: 'Work alongside clients from strategy to execution, and stay involved well after launch.',
   },
-]
-
-export const VALUES = [
-  { icon: Scale, title: 'Honesty', text: 'We tell you what we think, even when it means recommending less work.' },
-  { icon: UserCheck, title: 'Ownership', text: 'We treat your project as if it were our own business.' },
-  { icon: Sparkles, title: 'Quality', text: 'Clean code, careful testing and attention to the small details.' },
-  { icon: Lightbulb, title: 'Curiosity', text: 'We question the usual way of doing things and keep learning.' },
-  { icon: Users, title: 'Partnership', text: 'We work with you as one team and share the credit.' },
-  { icon: Compass, title: 'Pragmatism', text: 'The simplest solution that solves the problem is usually the best one.' },
 ]
 
 export const WHY_CHOOSE_US = [
