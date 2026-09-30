@@ -79,7 +79,7 @@
 
 @media (max-width: 960px) {
   .models {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     max-width: 520px;
     margin-inline: auto;
   }

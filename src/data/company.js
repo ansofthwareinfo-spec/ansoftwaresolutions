@@ -22,8 +22,8 @@ import {
 
 /* Company facts — these match our LinkedIn page. Keep both in sync. */
 export const COMPANY_FACTS = [
-  { label: 'Founded', value: '2022' },
   { label: 'Headquarters', value: 'Hyderabad, Telangana' },
+  { label: 'What we do', value: 'Recruitment & technology services' },
 ]
 
 export const SPECIALTIES = [
@@ -50,7 +50,7 @@ export const SERVICES_PROVIDED = [
 
 /** Short highlights for the dark "at a glance" band. */
 export const HIGHLIGHTS = [
-  { value: '2022', label: 'Founded in Hyderabad' },
+  { value: 'Hyderabad', label: 'Where we are based' },
   { value: '7', label: 'Areas of expertise' },
   { value: '8', label: 'Services we provide' },
   { value: 'Free', label: 'First consultation' },
@@ -60,12 +60,12 @@ export const MISSION_VISION = [
   {
     icon: Target,
     title: 'Our Mission',
-    text: 'To help organisations turn challenges into opportunities through technology, data and intelligent solutions, and to deliver value that lasts.',
+    text: 'To help organisations turn challenges into opportunities by connecting them with skilled people and building the technology they rely on.',
   },
   {
     icon: Eye,
     title: 'Our Vision',
-    text: 'To be the technology partner businesses rely on for honest advice and dependable delivery, where efficiency is powered by innovation.',
+    text: 'To be the partner companies trust for both talent and technology, known for honest advice, quality people and dependable delivery.',
   },
 ]
 
@@ -91,9 +91,9 @@ export const GOALS = [
     text: 'Use automation, data and AI to help every client get more done with less effort.',
   },
   {
-    icon: Lightbulb,
-    title: 'Keep learning',
-    text: 'Stay current with emerging technologies so clients benefit from what genuinely works today.',
+    icon: Users,
+    title: 'Put the right people first',
+    text: 'Match every role with people who have the skills, and the attitude, to succeed in it.',
   },
   {
     icon: Handshake,

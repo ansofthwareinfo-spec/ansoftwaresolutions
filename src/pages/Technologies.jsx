@@ -6,7 +6,8 @@ import PageHero from '@/components/common/PageHero'
 import Reveal from '@/components/common/Reveal'
 import SectionHeading from '@/components/common/SectionHeading'
 import Seo from '@/components/common/Seo'
-import { TECH_CATEGORIES, TECH_PRINCIPLES } from '@/data/technologies'
+import { FEATURED_TECH, TECH_CATEGORIES, TECH_PRINCIPLES } from '@/data/technologies'
+import Marquee from '@/sections/home/Marquee'
 import styles from './Technologies.module.css'
 
 const FILTERS = [{ value: 'all', label: 'All' }, ...TECH_CATEGORIES.map((c) => ({ value: c.id, label: c.title }))]
@@ -32,6 +33,8 @@ export default function Technologies() {
         }
         description="We work with well-established tools across software, data, AI and cloud, and recommend whichever fits your project best."
       />
+
+      <Marquee items={FEATURED_TECH} ariaLabel="Technologies we work with" />
 
       <section className="section" aria-label="Technology stack">
         <div className="container">
@@ -87,7 +90,7 @@ export default function Technologies() {
 
       <CtaBanner
         title="Not sure which technology is right for you?"
-        text="Our architects will review your requirements and recommend a stack that balances speed, cost and long-term maintainability."
+        text="Tell us about your project. We will look at your requirements and recommend tools that balance speed, cost and long-term maintenance."
         primaryLabel="Talk to an Expert"
       />
     </>

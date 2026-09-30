@@ -1,0 +1,240 @@
+/* Openings */
+.toolbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: min(100%, 520px);
+  padding: 0.35rem 0.5rem 0.35rem 1.1rem;
+  color: var(--c-muted);
+  background: #fff;
+  border: 1.5px solid var(--c-line);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--dur) var(--ease);
+}
+
+.search:focus-within {
+  border-color: var(--c-primary);
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.65rem 0.25rem;
+  border: 0;
+  background: transparent;
+  color: var(--c-ink);
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.count {
+  margin: -1.5rem 0 1.5rem;
+  text-align: center;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-muted);
+}
+
+.jobs {
+  display: grid;
+  gap: 1rem;
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  max-width: 980px;
+  margin-inline: auto;
+  padding: 3rem 1.25rem;
+  text-align: center;
+  color: var(--c-muted);
+  background: var(--c-bg-soft);
+  border-radius: var(--radius-lg);
+}
+
+.emptyTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--c-ink);
+}
+
+.empty a {
+  margin-top: 0.6rem;
+}
+
+.freshers {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 980px;
+  margin: 2rem auto 0;
+  padding: 1.5rem 1.75rem;
+  background: var(--c-secondary-50);
+  border: 1px solid rgba(3, 154, 207, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+.freshers h3 {
+  margin-bottom: 0.25rem;
+  font-size: var(--fs-md);
+}
+
+.freshers p {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-2);
+}
+
+.freshersIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  color: #fff;
+  background: var(--grad-brand);
+}
+
+/* Steps */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.step {
+  padding: 1.75rem 1.4rem;
+  border: 1px solid var(--c-dark-line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.stepNum {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: #fff;
+  background: var(--grad-brand);
+  border-radius: 12px;
+}
+
+.step h3 {
+  font-size: var(--fs-md);
+  margin-bottom: 0.4rem;
+}
+
+.step p {
+  font-size: var(--fs-sm);
+}
+
+/* Apply */
+.applyLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 1rem + 4vw, 4rem);
+  align-items: start;
+}
+
+.applyIntro {
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+}
+
+.introImage {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 16 / 10;
+}
+
+.introImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.infoCard {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 1.4rem;
+  color: var(--c-primary);
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.infoCard a {
+  display: inline-block;
+  padding-block: 0.3rem;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.infoCard a:hover {
+  text-decoration: underline;
+}
+
+.infoTitle {
+  font-weight: 700;
+  color: var(--c-ink);
+}
+
+.formCard {
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 1024px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .applyLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .applyIntro {
+    position: static;
+  }
+
+  .introImage {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .freshers {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: left;
+  }
+
+  .freshers a {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

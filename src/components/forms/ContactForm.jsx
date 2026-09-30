@@ -1,6 +1,7 @@
 import { Send } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Button from '@/components/common/Button'
+import { HIRING_SERVICES } from '@/data/hiring'
 import { SERVICES } from '@/data/services'
 import { useForm } from '@/hooks/useForm'
 import { submitForm } from '@/utils/submitForm'
@@ -37,7 +38,7 @@ const validate = (v) => ({
   email: validateEmail(v.email),
   phone: validatePhone(v.phone),
   company: v.company.length > LIMITS.company ? `Company must be under ${LIMITS.company} characters` : '',
-  service: validateRequired(v.service, 'Please select a service'),
+  service: validateRequired(v.service, 'Please tell us what you need'),
   message: validateMessage(v.message),
   consent: v.consent ? '' : 'Please accept the privacy policy to continue',
 })
@@ -71,17 +72,27 @@ export default function ContactForm() {
         <FormField {...register('phone')} type="tel" label="Phone number" placeholder="+91 90000 00000" autoComplete="tel" maxLength={LIMITS.phone} required />
         <FormField {...register('company')} label="Company" placeholder="Company name (optional)" autoComplete="organization" maxLength={LIMITS.company} />
 
-        <FormField {...register('service')} as="select" label="Service you need" required>
-          <option value="">Select a service</option>
-          {SERVICES.map((service) => (
-            <option key={service.slug} value={service.title}>
-              {service.title}
-            </option>
-          ))}
-          <option value="Other">Other</option>
+        <FormField {...register('service')} as="select" label="What do you need?" required>
+          <option value="">Select an option</option>
+          <optgroup label="Hiring">
+            {HIRING_SERVICES.map((item) => (
+              <option key={item.title} value={item.title}>
+                {item.title}
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label="Technology services">
+            {SERVICES.map((service) => (
+              <option key={service.slug} value={service.title}>
+                {service.title}
+              </option>
+            ))}
+          </optgroup>
+          <option value="Looking for a job">I am looking for a job</option>
+          <option value="Other">Something else</option>
         </FormField>
 
-        <FormField {...register('budget')} as="select" label="Estimated budget">
+        <FormField {...register('budget')} as="select" label="Estimated budget (for projects)">
           <option value="">Select a range (optional)</option>
           {BUDGETS.map((budget) => (
             <option key={budget} value={budget}>
@@ -93,8 +104,8 @@ export default function ContactForm() {
         <FormField
           {...register('message')}
           as="textarea"
-          label="Project details"
-          placeholder="Tell us about your project, goals and timeline…"
+          label="Details"
+          placeholder="Tell us about the role you are hiring for, or the project you have in mind…"
           maxLength={LIMITS.message}
           className={styles.span2}
           hint={`${values.message.length}/${LIMITS.message}`}

@@ -8,11 +8,14 @@ export default function MegaMenu({ id, open, onNavigate }) {
   return (
     <div id={id} className={cn(styles.mega, open && styles.megaOpen)} inert={!open}>
       <div className={styles.megaIntro}>
-        <p className={styles.megaEyebrow}>What we do</p>
-        <p className={styles.megaTitle}>Seven areas of expertise, one team</p>
+        <p className={styles.megaEyebrow}>Technology services</p>
+        <p className={styles.megaTitle}>Seven areas of expertise</p>
         <p className={styles.megaText}>From strategy to execution: software, data, AI, cloud and automation.</p>
         <Link to="/services" className={styles.megaAll} onClick={onNavigate}>
           View all services <ArrowRight size={16} aria-hidden="true" />
+        </Link>
+        <Link to="/technologies" className={styles.megaSecondary} onClick={onNavigate}>
+          Tools we use <ArrowRight size={14} aria-hidden="true" />
         </Link>
       </div>
 

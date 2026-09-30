@@ -1,32 +1,40 @@
+import { useId } from 'react'
 import Reveal from '@/components/common/Reveal'
 import SectionHeading from '@/components/common/SectionHeading'
 import { PROCESS } from '@/data/company'
 import styles from './ProcessSection.module.css'
 
-export default function ProcessSection({ soft = false }) {
+const DEFAULT_TITLE = (
+  <>
+    Five clear steps, <span className="text-gradient">no surprises</span>
+  </>
+)
+
+/** Numbered step-by-step process. Defaults to the technology delivery process. */
+export default function ProcessSection({
+  soft = false,
+  steps = PROCESS,
+  eyebrow = 'How we work',
+  title = DEFAULT_TITLE,
+  description = 'You always know what is happening, what comes next and what it will cost.',
+}) {
+  const titleId = useId()
+
   return (
-    <section className={`section ${soft ? 'section--soft' : ''}`} aria-labelledby="process-title">
+    <section className={`section ${soft ? 'section--soft' : ''}`} aria-labelledby={titleId}>
       <div className="container">
-        <SectionHeading
-          eyebrow="How we work"
-          title={
-            <span id="process-title">
-              Five clear steps, <span className="text-gradient">no surprises</span>
-            </span>
-          }
-          description="You always know what is happening, what comes next and what it will cost."
-        />
+        <SectionHeading eyebrow={eyebrow} title={<span id={titleId}>{title}</span>} description={description} />
 
         <ol className={styles.steps}>
-          {PROCESS.map(({ icon: Icon, title, text }, index) => (
-            <Reveal as="li" key={title} className={styles.step} delay={index * 90}>
+          {steps.map(({ icon: Icon, title: stepTitle, text }, index) => (
+            <Reveal as="li" key={stepTitle} className={styles.step} delay={index * 90}>
               <span className={styles.badge}>
                 <Icon size={26} strokeWidth={1.8} aria-hidden="true" />
                 <span className={styles.num} aria-hidden="true">
                   {index + 1}
                 </span>
               </span>
-              <h3 className={styles.title}>{title}</h3>
+              <h3 className={styles.title}>{stepTitle}</h3>
               <p className={styles.text}>{text}</p>
             </Reveal>
           ))}

@@ -1,4 +1,4 @@
-import { ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, Check, Cpu, Users } from 'lucide-react'
 import FeatureCard from '@/components/cards/FeatureCard'
 import Button from '@/components/common/Button'
 import CtaBanner from '@/components/common/CtaBanner'
@@ -9,15 +9,38 @@ import Seo from '@/components/common/Seo'
 import SmartImage from '@/components/common/SmartImage'
 import { SITE } from '@/config/site'
 import { COMPANY_FACTS, GOALS, MISSION_VISION, SERVICES_PROVIDED, SPECIALTIES, VALUES } from '@/data/company'
+import { HIRING_MODELS, HIRING_SERVICES } from '@/data/hiring'
+import { SERVICES } from '@/data/services'
 import WhyChooseUsSection from '@/sections/shared/WhyChooseUsSection'
 import { IMAGES } from '@/utils/image'
 import styles from './About.module.css'
 
 const STORY_POINTS = [
-  'Strategy and delivery handled by the same team',
-  'Honest advice, even when it means doing less',
-  'Clear pricing and regular progress updates',
-  'Scalable, secure solutions that are easy to maintain',
+  'Hiring for every function, from freshers to leaders',
+  'Screened candidates, not stacks of resumes',
+  'Engineers who deliver software, data and cloud projects',
+  'Honest advice and clear, agreed terms',
+]
+
+const OFFERINGS = [
+  {
+    icon: Users,
+    eyebrow: 'Recruitment & staffing',
+    title: 'We find the people you need',
+    text: 'From a single key hire to a full new team, we source, screen and shortlist candidates for every function.',
+    items: HIRING_SERVICES.map((service) => service.title),
+    cta: { label: 'Hire Talent', to: '/hire' },
+    dark: true,
+  },
+  {
+    icon: Cpu,
+    eyebrow: 'Technology services',
+    title: 'We also build your technology',
+    text: 'Our engineers plan, build and support the systems your business runs on, from strategy to execution.',
+    items: SERVICES.map((service) => service.title),
+    cta: { label: 'Explore Services', to: '/services' },
+    dark: false,
+  },
 ]
 
 export default function About() {
@@ -26,46 +49,50 @@ export default function About() {
       <Seo
         image="/og/about.jpg"
         title="About Us"
-        description="A&N Software Solutions is a self-owned technology company founded in Hyderabad in 2022. Learn about our story, mission, goals and the values behind our work."
+        description="A&N Software Solutions is a Hyderabad-based company helping organisations hire skilled professionals and build dependable technology. Learn who we are and how we work."
       />
 
       <PageHero
         eyebrow="About us"
         title={
           <>
-            Efficiency powered by <span className="text-gradient">innovation</span>
+            People and technology, <span className="text-gradient">working for you</span>
           </>
         }
-        description={`A small, focused technology company based in ${SITE.contact.address.city}, helping businesses turn challenges into opportunities.`}
+        description={`A ${SITE.contact.address.city}-based company that helps organisations grow by finding the right people and building the right technology.`}
       />
 
       {/* Story */}
       <section className="section" aria-labelledby="story-title">
         <div className={`container ${styles.story}`}>
           <Reveal className={styles.storyMedia}>
-            <SmartImage src={IMAGES.collaboration} alt="People discussing a project around laptops" sizes="(max-width: 900px) 90vw, 45vw" />
+            <SmartImage src={IMAGES.collaboration} alt="A team discussing a project around laptops" sizes="(max-width: 900px) 90vw, 45vw" />
             <div className={styles.storyBadge}>
-              <strong>{SITE.foundedYear}</strong>
-              <span>Founded in {SITE.contact.address.city}</span>
+              <strong>One</strong>
+              <span>partner for talent and technology</span>
             </div>
           </Reveal>
 
           <div>
-            <SectionHeading align="left" eyebrow="Our story" title={<span id="story-title">Why we started</span>} />
+            <SectionHeading align="left" eyebrow="Our story" title={<span id="story-title">Who we are</span>} />
             <Reveal className={styles.storyText}>
               <p>
-                {SITE.name} was founded in {SITE.contact.address.city} in {SITE.foundedYear}. Technology keeps changing
-                quickly, and many businesses find it hard to know where to start or who to trust. We wanted to be the
-                partner that makes it simpler.
+                {SITE.name} helps organisations grow in two ways: by finding them the right people, and by building the
+                technology those people work with.
               </p>
               <p>
-                We help organisations define a clear technology strategy, modernise the way they operate and then
-                deliver the change. Our work covers software engineering, data and analytics, artificial intelligence,
-                business intelligence, cloud computing, automation and digital transformation.
+                Our recruitment practice connects companies with skilled professionals for permanent, contract and
+                leadership roles: developers and analysts, customer support and BPO teams, operations, sales, HR and
+                management, from freshers to senior specialists. We take time to understand each role, so we can tell a
+                strong candidate from a good-looking resume.
               </p>
               <p>
-                We believe real change takes more than new technology. It needs a clear vision, a practical approach and
-                a team that stays with you from strategy to execution. That is how we work with every client.
+                Alongside hiring, we also deliver technology services for our clients: software engineering, data and
+                analytics, AI, business intelligence, cloud computing, automation and digital transformation.
+              </p>
+              <p>
+                Whether it is filling a critical position or modernising how your business runs, you get a clear
+                process, honest advice and a team that stays with you from the first conversation to the final result.
               </p>
             </Reveal>
             <Reveal as="ul" className={`check-list ${styles.points}`}>
@@ -95,8 +122,45 @@ export default function About() {
         </div>
       </section>
 
+      {/* What we do */}
+      <section className="section" aria-labelledby="offer-title">
+        <div className="container">
+          <SectionHeading
+            eyebrow="What we do for you"
+            title={
+              <span id="offer-title">
+                Two ways we help <span className="text-gradient">your business grow</span>
+              </span>
+            }
+            description="Work with us for one or both. Many companies start with hiring and come back to us for technology, or the other way round."
+          />
+          <div className={styles.offerGrid}>
+            {OFFERINGS.map(({ icon: Icon, eyebrow, title, text, items, cta, dark }, index) => (
+              <Reveal as="article" key={eyebrow} delay={index * 100} className={`${styles.offer} ${dark ? styles.offerDark : ''}`}>
+                <p className={styles.offerEyebrow}>
+                  <Icon size={16} aria-hidden="true" /> {eyebrow}
+                </p>
+                <h3 className={styles.offerTitle}>{title}</h3>
+                <p className={styles.offerText}>{text}</p>
+                <ul className={styles.offerList}>
+                  {items.map((item) => (
+                    <li key={item}>
+                      <Check size={16} aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Button to={cta.to} variant={dark ? 'accent' : 'primary'} icon={ArrowRight}>
+                  {cta.label}
+                </Button>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Snapshot */}
-      <section className="section" aria-labelledby="snapshot-title">
+      <section className="section section--soft" aria-labelledby="snapshot-title">
         <div className={`container ${styles.snapshot}`}>
           <div>
             <SectionHeading
@@ -118,7 +182,15 @@ export default function About() {
                 </div>
               ))}
             </dl>
-            <p className={styles.specialtiesLabel}>Specialties</p>
+            <p className={styles.specialtiesLabel}>Hiring solutions</p>
+            <ul className="chip-list">
+              {HIRING_MODELS.map((item) => (
+                <li key={item} className="chip">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className={`${styles.specialtiesLabel} ${styles.spaced}`}>Technology specialties</p>
             <ul className="chip-list">
               {SPECIALTIES.map((item) => (
                 <li key={item} className="chip">
@@ -139,7 +211,7 @@ export default function About() {
       </section>
 
       {/* Goals & Objectives */}
-      <section className="section section--soft" aria-labelledby="goals-title">
+      <section className="section" aria-labelledby="goals-title">
         <div className="container">
           <SectionHeading
             eyebrow="Goals & objectives"
@@ -161,7 +233,7 @@ export default function About() {
       </section>
 
       {/* Core values */}
-      <section className="section" aria-labelledby="values-title">
+      <section className="section section--soft" aria-labelledby="values-title">
         <div className="container">
           <SectionHeading eyebrow="Our values" title={<span id="values-title">How we like to work</span>} />
           <div className="grid-3">
@@ -174,7 +246,7 @@ export default function About() {
         </div>
       </section>
 
-      <WhyChooseUsSection />
+      <WhyChooseUsSection soft={false} />
       <CtaBanner />
     </>
   )

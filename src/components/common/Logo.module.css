@@ -36,9 +36,9 @@
 
 .sub {
   margin-top: 0.22rem;
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--c-secondary-600);
 }

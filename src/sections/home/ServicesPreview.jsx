@@ -11,13 +11,13 @@ export default function ServicesPreview() {
     <section className="section section--soft" aria-labelledby="services-preview-title">
       <div className="container">
         <SectionHeading
-          eyebrow="What we do"
+          eyebrow="Our services"
           title={
             <span id="services-preview-title">
-              Seven areas of expertise, <span className="text-gradient">one team</span>
+              We also build technology <span className="text-gradient">for your business</span>
             </span>
           }
-          description="From building software to making sense of your data, we help with the full picture: strategy, delivery and support."
+          description="Alongside hiring, we work with clients on software, data, AI, cloud and automation projects, from the first plan to ongoing support. Here is what we can do for you."
         />
 
         <div className="grid-4">

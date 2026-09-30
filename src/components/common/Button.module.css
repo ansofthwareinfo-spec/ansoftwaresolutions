@@ -56,6 +56,13 @@
 
 .full { width: 100%; }
 
+@media (max-width: 400px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
 /* Variants */
 .primary {
   background: var(--c-primary);
@@ -113,6 +120,8 @@
   background: none;
   color: var(--c-primary);
   border: 0;
+  white-space: normal;
+  text-align: left;
 }
 
 .link:hover {

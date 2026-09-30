@@ -141,7 +141,7 @@
 
 @media (max-width: 900px) {
   .overview {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .mediaIcon {
@@ -151,6 +151,6 @@
 
 @media (max-width: 520px) {
   .benefits {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }

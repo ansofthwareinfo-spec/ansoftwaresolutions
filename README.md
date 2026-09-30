@@ -22,7 +22,8 @@ npm run lint      # oxlint
 | Technologies | `src/data/technologies.js` |
 | Industries | `src/data/industries.js` |
 | Solutions (example solution types) | `src/data/solutions.js` |
-| Jobs, perks, hiring steps | `src/data/careers.js` |
+| Job openings shown on the Jobs page | `src/data/jobs.js` |
+| Hiring solutions, roles we recruit for, hiring process, employer FAQs | `src/data/hiring.js` |
 | FAQs | `src/data/faqs.js` |
 | Privacy policy & terms | `src/data/legal.js` |
 | Images (Unsplash ids or `/images/...` paths) | `src/utils/image.js` |

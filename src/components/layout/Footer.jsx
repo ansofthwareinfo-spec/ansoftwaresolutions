@@ -10,7 +10,6 @@ import styles from './Footer.module.css'
 
 export default function Footer() {
   const { contact } = SITE
-  const year = new Date().getFullYear()
 
   return (
     <footer className={styles.footer}>
@@ -18,8 +17,8 @@ export default function Footer() {
         <div className={styles.brand}>
           <Logo tone="light" />
           <p className={styles.about}>
-            {SITE.name} is a Hyderabad-based technology company. We help businesses turn challenges into
-            opportunities through software, data and intelligent solutions.
+            {SITE.name} helps companies hire skilled professionals and build dependable technology, from our base
+            in Hyderabad.
           </p>
           <SocialLinks tone="light" />
         </div>
@@ -36,7 +35,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h2 className={styles.heading}>Services</h2>
+          <h2 className={styles.heading}>Technology Services</h2>
           <ul className={styles.links}>
             {SERVICES.map((service) => (
               <li key={service.slug}>
@@ -80,7 +79,7 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
           <p>
-            © {year} {SITE.legalName}. All rights reserved.
+            © {SITE.legalName}. All rights reserved.
           </p>
           <ul className={styles.legal}>
             {LEGAL_LINKS.map((link) => (

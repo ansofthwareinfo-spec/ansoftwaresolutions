@@ -47,7 +47,7 @@
 
 .items {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
   gap: 0.7rem;
 }
 
@@ -105,4 +105,26 @@
 
 .principle p {
   font-size: var(--fs-sm);
+}
+
+@media (max-width: 520px) {
+  .card {
+    padding: 1.4rem 1.1rem;
+  }
+
+  .items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .items li {
+    gap: 0.5rem;
+    padding: 0.55rem 0.6rem;
+    font-size: var(--fs-xs);
+  }
+
+  .initial {
+    width: 26px;
+    height: 26px;
+  }
 }

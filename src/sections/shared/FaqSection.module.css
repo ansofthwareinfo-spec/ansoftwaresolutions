@@ -39,6 +39,8 @@
 
 .mail {
   grid-column: 1 / -1;
+  justify-self: start;
+  padding-block: 0.35rem;
   font-size: var(--fs-sm);
   font-weight: 600;
   word-break: break-all;
@@ -50,7 +52,7 @@
 
 @media (max-width: 900px) {
   .layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .intro {

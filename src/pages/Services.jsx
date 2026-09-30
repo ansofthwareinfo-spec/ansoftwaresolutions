@@ -23,7 +23,7 @@ export default function Services() {
       />
 
       <PageHero
-        eyebrow="Our services"
+        eyebrow="Technology services"
         title={
           <>
             What we can <span className="text-gradient">do for you</span>

@@ -25,7 +25,7 @@ export default function Contact() {
       <Seo
         image="/og/contact.jpg"
         title="Contact Us"
-        description="Contact A&N Software Solutions in Hyderabad for a free consultation on software, data, AI, cloud or automation. Call +91 63007 21736 or send us a message."
+        description="Contact A&N Software Solutions in Hyderabad about hiring, job opportunities or technology projects. Call +91 63007 21736 or send us a message."
       />
 
       <PageHero
@@ -35,7 +35,7 @@ export default function Contact() {
             Let’s start a <span className="text-gradient">conversation</span>
           </>
         }
-        description="Tell us about your idea or the problem you want to solve. We usually reply within one business day."
+        description="Whether you are hiring, looking for a job or planning a technology project, we are happy to help. We usually reply within one business day."
       />
 
       <section className="section" aria-label="Contact information and form">

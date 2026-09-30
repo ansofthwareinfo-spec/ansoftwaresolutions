@@ -1,4 +1,4 @@
-import { Briefcase, ChevronDown, Clock, MapPin } from 'lucide-react'
+import { Briefcase, Building2, ChevronDown, Laptop, MapPin } from 'lucide-react'
 import { useState } from 'react'
 import Button from '@/components/common/Button'
 import { cn } from '@/utils/cn'
@@ -12,20 +12,30 @@ export default function JobCard({ job, onApply }) {
     <article className={cn(styles.card, open && styles.open)}>
       <div className={styles.main}>
         <div>
-          <span className={styles.dept}>{job.department}</span>
+          <span className={styles.dept}>{job.type}</span>
           <h3 className={styles.title}>{job.title}</h3>
           <ul className={styles.meta}>
+            <li>
+              <Building2 size={16} aria-hidden="true" /> {job.company}
+            </li>
             <li>
               <MapPin size={16} aria-hidden="true" /> {job.location}
             </li>
             <li>
-              <Briefcase size={16} aria-hidden="true" /> {job.experience}
+              <Laptop size={16} aria-hidden="true" /> {job.workMode}
             </li>
             <li>
-              <Clock size={16} aria-hidden="true" /> {job.type}
+              <Briefcase size={16} aria-hidden="true" /> {job.experience}
             </li>
           </ul>
           <p className={styles.summary}>{job.summary}</p>
+          <ul className={`chip-list ${styles.skills}`} aria-label="Key skills">
+            {job.skills.map((skill) => (
+              <li key={skill} className="chip">
+                {skill}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className={styles.actions}>
@@ -47,7 +57,7 @@ export default function JobCard({ job, onApply }) {
 
       <div id={detailsId} className={styles.details} hidden={!open}>
         <div>
-          <h4>Responsibilities</h4>
+          <h4>What you will do</h4>
           <ul>
             {job.responsibilities.map((item) => (
               <li key={item}>{item}</li>
@@ -55,7 +65,7 @@ export default function JobCard({ job, onApply }) {
           </ul>
         </div>
         <div>
-          <h4>Requirements</h4>
+          <h4>What they are looking for</h4>
           <ul>
             {job.requirements.map((item) => (
               <li key={item}>{item}</li>

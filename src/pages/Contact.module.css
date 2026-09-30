@@ -43,6 +43,11 @@
   word-break: break-word;
 }
 
+a.channelValue {
+  display: inline-block;
+  padding-block: 0.35rem;
+}
+
 a.channelValue:hover {
   color: var(--c-primary);
 }
@@ -126,7 +131,7 @@ a.channelValue:hover {
 .officeCity span {
   margin-left: 0.4rem;
   padding: 0.1rem 0.55rem;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--c-secondary-600);
   background: var(--c-secondary-50);
@@ -149,12 +154,12 @@ a.channelValue:hover {
 @media (max-width: 1024px) {
 
   .layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
 @media (max-width: 520px) {
   .channels {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }

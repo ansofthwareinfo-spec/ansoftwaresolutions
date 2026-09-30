@@ -1,20 +1,21 @@
 export const NAV_LINKS = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
+  { label: 'Hire Talent', to: '/hire' },
+  { label: 'Jobs', to: '/jobs' },
   { label: 'Services', to: '/services', hasMenu: true },
-  { label: 'Technologies', to: '/technologies' },
-  { label: 'Industries', to: '/industries' },
   { label: 'Solutions', to: '/solutions' },
-  { label: 'Careers', to: '/careers' },
+  { label: 'Industries', to: '/industries' },
+  { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ]
 
 export const FOOTER_COMPANY_LINKS = [
+  { label: 'Hire Talent', to: '/hire' },
+  { label: 'Jobs', to: '/jobs' },
   { label: 'About Us', to: '/about' },
-  { label: 'Technologies', to: '/technologies' },
-  { label: 'Industries', to: '/industries' },
   { label: 'Solutions', to: '/solutions' },
-  { label: 'Careers', to: '/careers' },
+  { label: 'Industries', to: '/industries' },
+  { label: 'Technologies', to: '/technologies' },
   { label: 'Contact Us', to: '/contact' },
 ]
 

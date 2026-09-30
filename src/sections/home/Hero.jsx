@@ -1,12 +1,13 @@
-import { ArrowRight, CheckCircle2, MapPin, Sparkles } from 'lucide-react'
+import { ArrowRight, BadgeCheck, CheckCircle2, Sparkles } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import Button from '@/components/common/Button'
 import SmartImage from '@/components/common/SmartImage'
 import { SITE } from '@/config/site'
 import { IMAGES } from '@/utils/image'
 import styles from './Hero.module.css'
 
-const PROMISES = ['Free first consultation', 'NDA on request', 'You own the code']
-const FOCUS_AREAS = ['Software', 'Data', 'AI', 'Cloud']
+const PROMISES = ['Screened, relevant profiles', 'Confidential hiring', 'Clear, agreed terms']
+const MODELS = ['Permanent', 'Contract', 'Contract-to-hire']
 
 export default function Hero() {
   return (
@@ -25,20 +26,20 @@ export default function Hero() {
           </p>
 
           <h1 id="hero-title" className={styles.title}>
-            Turn business challenges into <span className="text-gradient">real opportunities</span>
+            Build your team with <span className="text-gradient">people who deliver</span>
           </h1>
 
           <p className={styles.lead}>
-            We are a Hyderabad-based team that helps businesses work smarter with software, data, AI and cloud. Tell
-            us what is slowing you down, and we will help you plan it, build it and run it.
+            We help companies hire skilled, pre-screened professionals for permanent, contract and leadership roles.
+            And when you need technology built, our engineers are ready to help with that too.
           </p>
 
           <div className={styles.actions}>
-            <Button to="/contact" size="lg" icon={ArrowRight}>
-              Talk to Us
+            <Button to="/hire" size="lg" icon={ArrowRight}>
+              Hire Talent
             </Button>
-            <Button to="/services" size="lg" variant="outline">
-              See What We Do
+            <Button to="/jobs" size="lg" variant="outline">
+              Find a Job
             </Button>
           </div>
 
@@ -55,8 +56,8 @@ export default function Hero() {
         <div className={styles.visual}>
           <div className={styles.frame}>
             <SmartImage
-              src={IMAGES.heroTeam}
-              alt="Developers working together on laptops"
+              src={IMAGES.interview}
+              alt="A recruiter interviewing a candidate at a desk"
               width={640}
               height={720}
               sizes="(max-width: 960px) 90vw, 520px"
@@ -64,38 +65,29 @@ export default function Hero() {
             />
           </div>
 
-          <div className={`${styles.float} ${styles.floatTop}`}>
+          {/* Illustrative UI card, not a real candidate */}
+          <div className={`${styles.float} ${styles.floatTop}`} aria-hidden="true">
             <span className={styles.floatIcon}>
-              <MapPin size={20} aria-hidden="true" />
+              <BadgeCheck size={20} />
             </span>
             <div>
-              <strong>Since {SITE.foundedYear}</strong>
-              <span>
-                {SITE.contact.address.city}, {SITE.contact.address.country}
-              </span>
+              <strong>Profile shortlisted</strong>
+              <span>Skills and experience verified</span>
             </div>
           </div>
 
-          <div className={`${styles.float} ${styles.floatBottom}`}>
-            <p className={styles.floatLabel}>From strategy to execution</p>
+          <div className={`${styles.float} ${styles.floatBottom}`} aria-hidden="true">
+            <p className={styles.floatLabel}>Ways to hire</p>
             <ul className={styles.focus}>
-              {FOCUS_AREAS.map((area) => (
-                <li key={area}>{area}</li>
+              {MODELS.map((model) => (
+                <li key={model}>{model}</li>
               ))}
             </ul>
           </div>
 
-          <div className={styles.code} aria-hidden="true">
-            <span className={styles.dots}>
-              <i />
-              <i />
-              <i />
-            </span>
-            <code>
-              <span className={styles.k}>const</span> efficiency = <span className={styles.f}>innovate</span>(
-              <span className={styles.s}>&apos;your idea&apos;</span>)
-            </code>
-          </div>
+          <Link to="/services" className={styles.servicesPill}>
+            Also: Software · Data · AI · Cloud <ArrowRight size={14} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

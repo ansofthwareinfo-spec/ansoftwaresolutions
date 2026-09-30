@@ -129,11 +129,14 @@ button {
     scroll-behavior: auto;
   }
 
+  /* Remove motion entirely (a tiny non-zero duration would still start transitions,
+     e.g. visibility, from their hidden state and block focus). */
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
   }
 }

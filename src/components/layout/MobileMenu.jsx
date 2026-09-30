@@ -27,7 +27,7 @@ export default function MobileMenu({ id, open, onClose }) {
 
   useEffect(() => {
     if (!open) return undefined
-    closeRef.current?.focus()
+    const frame = requestAnimationFrame(() => closeRef.current?.focus())
 
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
@@ -50,7 +50,10 @@ export default function MobileMenu({ id, open, onClose }) {
     }
 
     document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
+    return () => {
+      cancelAnimationFrame(frame)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
   }, [open])
 
   const linkClass = ({ isActive }) => cn(styles.link, isActive && styles.active)
@@ -109,8 +112,8 @@ export default function MobileMenu({ id, open, onClose }) {
         </nav>
 
         <div className={styles.footer}>
-          <Button to="/contact" fullWidth>
-            Book a Free Consultation
+          <Button to="/hire" fullWidth>
+            Hire Talent
           </Button>
           <a href={`tel:${SITE.contact.phoneHref}`} className={styles.contact}>
             <Phone size={18} aria-hidden="true" /> {SITE.contact.phone}

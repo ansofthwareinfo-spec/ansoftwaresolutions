@@ -1,3 +1,5 @@
+import { HIRING_FAQS } from './hiring'
+
 export const GENERAL_FAQS = [
   {
     q: 'How much will my project cost?',
@@ -23,4 +25,14 @@ export const GENERAL_FAQS = [
     q: 'What happens after launch?',
     a: 'We do not disappear. We can take care of bug fixes, updates, monitoring and new features on a support plan that suits you.',
   },
+]
+
+/** Home page mix: hiring questions first, then a few about technology services. */
+export const HOME_FAQS = [
+  ...HIRING_FAQS,
+  {
+    q: 'Do you also provide technology services?',
+    a: 'Yes. Our engineers build software and deliver data & analytics, AI, business intelligence, cloud and automation solutions, from planning through to support.',
+  },
+  GENERAL_FAQS.find((item) => item.q === 'Can you sign an NDA?'),
 ]

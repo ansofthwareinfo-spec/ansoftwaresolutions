@@ -32,3 +32,28 @@
   border-color: var(--c-primary);
   box-shadow: var(--shadow-brand);
 }
+
+/* Phones: one swipeable row instead of several wrapped rows */
+@media (max-width: 640px) {
+  .bar {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0.25rem var(--gutter) 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pill {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
+}

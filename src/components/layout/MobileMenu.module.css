@@ -3,11 +3,14 @@
   inset: 0;
   z-index: var(--z-drawer);
   visibility: hidden;
-  transition: visibility 0.35s;
+  /* Hide only after the slide-out finishes... */
+  transition: visibility 0s linear 0.35s;
 }
 
 .open {
   visibility: visible;
+  /* ...but show immediately so focus can move into the drawer. */
+  transition-delay: 0s;
 }
 
 .overlay {

@@ -3,16 +3,15 @@ import Button from '@/components/common/Button'
 import Reveal from '@/components/common/Reveal'
 import SectionHeading from '@/components/common/SectionHeading'
 import SmartImage from '@/components/common/SmartImage'
-import { SITE } from '@/config/site'
 import { MISSION_VISION } from '@/data/company'
 import { IMAGES } from '@/utils/image'
 import styles from './AboutPreview.module.css'
 
 const HIGHLIGHTS = [
-  'You work directly with the people building it',
-  'Clear estimates before any work starts',
-  'Regular progress updates you can follow',
-  'Solutions that are easy to maintain',
+  'Skilled people for every function',
+  'A dedicated point of contact',
+  'Honest advice and clear terms',
+  'Engineers for technology projects',
 ]
 
 export default function AboutPreview() {
@@ -21,14 +20,14 @@ export default function AboutPreview() {
       <div className={`container ${styles.layout}`}>
         <Reveal className={styles.media}>
           <div className={styles.imgMain}>
-            <SmartImage src={IMAGES.officeTeam} alt="A small team planning a project around a laptop" sizes="(max-width: 900px) 90vw, 40vw" />
+            <SmartImage src={IMAGES.officeTeam} alt="A team discussing a hiring plan around a laptop" sizes="(max-width: 900px) 90vw, 40vw" />
           </div>
           <div className={styles.imgSmall}>
             <SmartImage src={IMAGES.codeLaptop} alt="Code on a laptop screen" sizes="(max-width: 900px) 50vw, 20vw" />
           </div>
           <div className={styles.badge}>
-            <strong>{SITE.foundedYear}</strong>
-            <span>Founded in {SITE.contact.address.city}</span>
+            <strong>People</strong>
+            <span>and technology, under one roof</span>
           </div>
         </Reveal>
 
@@ -38,10 +37,10 @@ export default function AboutPreview() {
             eyebrow="About us"
             title={
               <span id="about-preview-title">
-                Technology that makes <span className="text-gradient">work easier</span>
+                The right people and <span className="text-gradient">the right technology</span>
               </span>
             }
-            description="A&N Software Solutions helps organisations turn challenges into opportunities through technology, data and intelligent solutions. We combine technical skill with a practical understanding of how businesses run, so what we build actually gets used."
+            description="A&N Software Solutions helps organisations turn challenges into opportunities. We connect companies with skilled professionals for every function, and we also build the software, data and cloud solutions that help those teams do their best work."
           />
 
           <Reveal className={styles.mv}>
