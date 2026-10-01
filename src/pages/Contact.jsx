@@ -5,6 +5,7 @@ import Seo from '@/components/common/Seo'
 import SocialLinks from '@/components/common/SocialLinks'
 import ContactForm from '@/components/forms/ContactForm'
 import { SITE } from '@/config/site'
+import { HOME_FAQS } from '@/data/faqs'
 import FaqSection from '@/sections/shared/FaqSection'
 import styles from './Contact.module.css'
 
@@ -97,7 +98,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <FaqSection soft />
+      <FaqSection items={HOME_FAQS} soft />
     </>
   )
 }

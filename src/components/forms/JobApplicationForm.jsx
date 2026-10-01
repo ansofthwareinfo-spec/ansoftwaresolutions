@@ -161,7 +161,7 @@ export default function JobApplicationForm({ positions, selectedPosition, select
 
         <div className={styles.span2}>
           <CheckboxField {...register('consent')} checked={values.consent}>
-            I agree to the processing of my personal data as described in the <Link to="/privacy-policy">Privacy Policy</Link>.
+            I agree to the <Link to="/privacy-policy">Privacy Policy</Link> and consent to my profile being shared with employers for suitable roles.
           </CheckboxField>
         </div>
 

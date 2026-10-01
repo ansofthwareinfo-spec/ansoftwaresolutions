@@ -130,7 +130,7 @@ export default function About() {
                 Two ways we help <span className="text-gradient">your business grow</span>
               </span>
             }
-            description="Work with us for one or both. Many companies start with hiring and come back to us for technology, or the other way round."
+            description="Work with us for one or both, whenever you need them. The same team, the same clear way of working."
           />
           <div className={styles.offerGrid}>
             {OFFERINGS.map(({ icon: Icon, eyebrow, title, text, items, cta, dark }, index) => (

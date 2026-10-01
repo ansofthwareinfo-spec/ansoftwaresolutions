@@ -70,7 +70,7 @@ export default function Footer() {
         <div className={styles.newsletter}>
           <div>
             <h2 className={styles.newsTitle}>Stay in the loop</h2>
-            <p>Occasional notes on software, data and AI that are actually useful. No spam.</p>
+            <p>New job openings, hiring tips and company news, now and then. No spam.</p>
           </div>
           <NewsletterForm />
         </div>

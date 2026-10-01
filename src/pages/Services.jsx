@@ -39,7 +39,10 @@ export default function Services() {
         </Button>
       </PageHero>
 
-      <section className="section" aria-label="All services">
+      <section className="section" aria-labelledby="all-services-title">
+        <h2 id="all-services-title" className="visually-hidden">
+          Our technology services
+        </h2>
         <div className="container grid-4">
           {SERVICES.map((service, index) => (
             <Reveal key={service.slug} delay={(index % 4) * 80}>

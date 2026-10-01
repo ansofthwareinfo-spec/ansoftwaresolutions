@@ -10,7 +10,7 @@
   --c-primary-50: #ecf5fb;
 
   --c-secondary: #039acf;
-  --c-secondary-600: #0279a6;
+  --c-secondary-600: #026b93;
   --c-secondary-50: #e4f5fb;
 
   --c-accent: #ff8a3d;
@@ -20,7 +20,7 @@
   /* Neutrals */
   --c-ink: #061a3a;
   --c-ink-2: #3d4a66;
-  --c-muted: #6b7690;
+  --c-muted: #5c6782;
   --c-line: #e3e8f2;
   --c-bg: #ffffff;
   --c-bg-soft: #f5f7fc;
@@ -41,8 +41,8 @@
   --grad-warm: linear-gradient(135deg, var(--c-accent) 0%, #ffb547 100%);
 
   /* Typography */
-  --font-display: 'Outfit', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --font-body: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body: 'Manrope Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
   --fs-xs: 0.8125rem;
   --fs-sm: 0.9375rem;

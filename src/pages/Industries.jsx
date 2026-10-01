@@ -84,7 +84,8 @@ export default function Industries() {
 
       <CtaBanner
         title="Don’t see your industry here?"
-        text="We work across many sectors. Tell us who you need or what you want to build, and we will tell you honestly how we can help."
+        text="Our hiring and technology services are not limited to these sectors. Tell us who you need or what you want to build, and we will tell you honestly how we can help."
+        primaryLabel="Talk to Us"
       />
     </>
   )

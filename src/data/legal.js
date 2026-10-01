@@ -1,11 +1,11 @@
 /* Template legal copy — have these reviewed by a legal professional before going live. */
 export const PRIVACY_POLICY = {
-  updated: 'January 1, 2026',
+  updated: 'October 1, 2026',
   sections: [
     {
       title: 'Information We Collect',
       body: [
-        'We collect information you voluntarily provide through our contact, career and newsletter forms, such as your name, email address, phone number, company name, resume and message.',
+        'We collect information you choose to share through our contact, hiring requirement, job application and newsletter forms. This can include your name, email address, phone number, company name, resume, skills, experience, notice period, location and any message you send.',
         'We may also collect limited technical information such as browser type, device and pages visited, to help us improve the website.',
       ],
     },
@@ -13,20 +13,28 @@ export const PRIVACY_POLICY = {
       title: 'How We Use Your Information',
       body: [
         'To respond to your enquiries, prepare proposals and provide our services.',
-        'To evaluate job applications and communicate with candidates.',
+        'To understand an employer’s hiring requirement and find suitable candidates.',
+        'To review job applications, match candidates with suitable openings and keep them informed.',
         'To send updates or newsletters you have subscribed to. You may unsubscribe at any time.',
       ],
     },
     {
       title: 'Data Sharing',
       body: [
-        'We do not sell or rent your personal information. We only share data with trusted service providers who help us operate our business, under strict confidentiality obligations, or where required by law.',
+        'If you apply for a job or send us your resume, we share your profile with employers who are hiring for roles that match your experience. We only do this for the purpose of recruitment.',
+        'We do not sell or rent your personal information. Apart from employers as described above, we only share data with trusted service providers who help us run our business, under confidentiality obligations, or where required by law.',
       ],
     },
     {
       title: 'Data Security',
       body: [
         'We use reasonable technical and organisational measures to protect your data against unauthorised access, loss or misuse. However, no method of transmission over the internet is 100% secure.',
+      ],
+    },
+    {
+      title: 'Data Retention',
+      body: [
+        'We keep candidate profiles for as long as they are useful for matching you with suitable roles, and we delete them when you ask us to. Employer enquiries are kept for as long as needed to provide our services.',
       ],
     },
     {
@@ -38,14 +46,14 @@ export const PRIVACY_POLICY = {
     {
       title: 'Your Rights',
       body: [
-        'You may request access to, correction of, or deletion of your personal data at any time by contacting us at the email address below.',
+        'In line with applicable Indian law, including the Digital Personal Data Protection Act, 2023, you may ask to access, correct or delete your personal data, or withdraw your consent, at any time by contacting us at the email address below.',
       ],
     },
   ],
 }
 
 export const TERMS = {
-  updated: 'January 1, 2026',
+  updated: 'October 1, 2026',
   sections: [
     {
       title: 'Acceptance of Terms',
@@ -61,6 +69,13 @@ export const TERMS = {
       title: 'Intellectual Property',
       body: [
         'All content on this website, including text, graphics, logos and design, is the property of the company or its licensors and may not be reproduced without prior written permission.',
+      ],
+    },
+    {
+      title: 'Job Listings & Applications',
+      body: [
+        'Job openings on this website are published on behalf of our client companies. Details may change, and positions may be filled or closed without notice.',
+        'Sending an application or resume does not guarantee an interview or a job offer. Hiring decisions are made by the employer.',
       ],
     },
     {

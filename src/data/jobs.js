@@ -71,7 +71,7 @@ export const JOBS = [
     id: 'power-bi-developer',
     title: 'Power BI Developer',
     company: 'Consulting firm',
-    location: 'Remote',
+    location: 'Anywhere in India',
     workMode: 'Remote',
     type: 'Contract',
     experience: '2–4 years',

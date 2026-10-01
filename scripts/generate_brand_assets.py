@@ -273,6 +273,9 @@ def main() -> None:
     save_png(badge.resize((256, 256), Image.LANCZOS), BRAND_DIR / "logo-mark.png")
     badge.resize((256, 256), Image.LANCZOS).save(BRAND_DIR / "logo-mark.webp", "WEBP", quality=90, method=6)
     print(f"  public/brand/logo-mark.webp  ({(BRAND_DIR / 'logo-mark.webp').stat().st_size // 1024} KB)")
+    small = badge.resize((96, 96), Image.LANCZOS)
+    small.save(BRAND_DIR / "logo-mark-96.webp", "WEBP", quality=90, method=6)
+    print(f"  public/brand/logo-mark-96.webp  ({(BRAND_DIR / 'logo-mark-96.webp').stat().st_size // 1024} KB)")
     save_png(source.resize((512, 512), Image.LANCZOS), BRAND_DIR / "logo-512.png")
 
     save_png(on_canvas(badge, 512, 0.92), BRAND_DIR / "icon-512.png")

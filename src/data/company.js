@@ -4,6 +4,7 @@ import {
   FileCheck2,
   Handshake,
   LifeBuoy,
+  Lightbulb,
   MessagesSquare,
   PenTool,
   Rocket,
@@ -12,7 +13,6 @@ import {
   ShieldCheck,
   Target,
   TrendingUp,
-  Users,
   Wrench,
   Zap,
 } from 'lucide-react'
@@ -88,9 +88,9 @@ export const GOALS = [
     text: 'Use automation, data and AI to help every client get more done with less effort.',
   },
   {
-    icon: Users,
-    title: 'Put the right people first',
-    text: 'Match every role with people who have the skills, and the attitude, to succeed in it.',
+    icon: Lightbulb,
+    title: 'Keep learning',
+    text: 'Stay current with emerging technologies, so clients benefit from what genuinely works today.',
   },
   {
     icon: Handshake,

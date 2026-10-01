@@ -45,7 +45,7 @@
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
-  color: #9aa6c0;
+  color: var(--c-muted);
   white-space: nowrap;
   transition: color var(--dur) var(--ease);
 }

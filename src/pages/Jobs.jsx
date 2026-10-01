@@ -111,8 +111,8 @@ export default function Jobs() {
             <div>
               <h3>Freshers are welcome</h3>
               <p>
-                Just finished your degree? Share your resume. Companies regularly ask us for motivated graduates for
-                trainee and entry-level roles.
+                Just finished your degree? We also hire for trainee and entry-level roles. Share your resume and we will
+                contact you when one matches your profile.
               </p>
             </div>
             <Button href="#apply" size="sm">

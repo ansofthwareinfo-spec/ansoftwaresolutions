@@ -62,7 +62,7 @@ image to `<Seo image="/og/<page>.jpg" />`.
 
 ## Forms
 
-Contact, careers and newsletter forms validate in the browser and show a success message.
+Contact, hiring requirement, job application and newsletter forms validate in the browser and show a success message.
 They do **not** send data anywhere yet — connect a backend or a form service
 (Formspree, EmailJS, etc.) in `src/utils/submitForm.js`. Always re-validate on the server.
 

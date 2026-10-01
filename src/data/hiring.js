@@ -52,7 +52,7 @@ export const HIRING_SERVICES = [
   },
 ]
 
-export const HIRING_MODELS = ['Permanent', 'Contract', 'Contract-to-hire', 'Leadership', 'Freshers', 'Bulk hiring']
+export const HIRING_MODELS = ['Permanent', 'Contract', 'Contract-to-hire', 'Leadership', 'Campus & freshers', 'Bulk hiring']
 
 /* Roles we recruit for, grouped by function. */
 export const ROLE_GROUPS = [

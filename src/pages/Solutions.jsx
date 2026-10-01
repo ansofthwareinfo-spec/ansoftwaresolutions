@@ -30,7 +30,10 @@ export default function Solutions() {
         description="A few examples of what we can build. Every solution is shaped around your business, your users and your goals."
       />
 
-      <section className="section" aria-label="Example solutions">
+      <section className="section" aria-labelledby="solution-list-title">
+        <h2 id="solution-list-title" className="visually-hidden">
+          Example solutions
+        </h2>
         <div className="container">
           <FilterBar
             options={SOLUTION_CATEGORIES}
@@ -44,7 +47,7 @@ export default function Solutions() {
           <div className="grid-3">
             {visible.map((solution, index) => (
               <Reveal key={solution.id} delay={(index % 3) * 90}>
-                <SolutionCard solution={solution} />
+                <SolutionCard solution={solution} priority={index === 0} />
               </Reveal>
             ))}
           </div>

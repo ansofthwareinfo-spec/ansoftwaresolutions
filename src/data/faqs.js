@@ -19,7 +19,7 @@ export const GENERAL_FAQS = [
   },
   {
     q: 'Can you sign an NDA?',
-    a: 'Of course. We are happy to sign a non-disclosure agreement before you share the details of your idea.',
+    a: 'Of course. We are happy to sign a non-disclosure agreement before you share the details of a role or a project.',
   },
   {
     q: 'What happens after launch?',
