@@ -1,4 +1,4 @@
-import { ArrowRight, BadgeCheck, CheckCircle2, Sparkles } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Button from '@/components/common/Button'
 import SmartImage from '@/components/common/SmartImage'
@@ -7,7 +7,6 @@ import { IMAGES } from '@/utils/image'
 import styles from './Hero.module.css'
 
 const PROMISES = ['Screened, relevant profiles', 'Confidential hiring', 'Clear, agreed terms']
-const MODELS = ['Permanent', 'Contract', 'Contract-to-hire']
 
 export default function Hero() {
   return (
@@ -63,26 +62,6 @@ export default function Hero() {
               sizes="(max-width: 960px) 90vw, 520px"
               priority
             />
-          </div>
-
-          {/* Illustrative UI card, not a real candidate */}
-          <div className={`${styles.float} ${styles.floatTop}`} aria-hidden="true">
-            <span className={styles.floatIcon}>
-              <BadgeCheck size={20} />
-            </span>
-            <div>
-              <strong>Profile shortlisted</strong>
-              <span>Skills and experience verified</span>
-            </div>
-          </div>
-
-          <div className={`${styles.float} ${styles.floatBottom}`} aria-hidden="true">
-            <p className={styles.floatLabel}>Ways to hire</p>
-            <ul className={styles.focus}>
-              {MODELS.map((model) => (
-                <li key={model}>{model}</li>
-              ))}
-            </ul>
           </div>
 
           <Link to="/services" className={styles.servicesPill}>
