@@ -11,11 +11,7 @@ import styles from './Industries.module.css'
 export default function Industries() {
   return (
     <>
-      <Seo
-        image="/og/industries.jpg"
-        title="Industries"
-        description="Hiring and technology services for IT, BPO and customer service, health insurance, healthcare, banking and finance, retail and education. A&N Software Solutions, Hyderabad."
-      />
+      <Seo />
 
       <PageHero
         eyebrow="Industries"

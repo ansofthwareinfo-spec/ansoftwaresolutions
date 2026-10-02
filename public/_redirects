@@ -1,1 +1,8 @@
-/*    /index.html   200
+# Netlify / Cloudflare Pages
+# Every route has its own prerendered HTML file, so no SPA catch-all is needed:
+# unknown URLs get dist/404.html with a real 404 status.
+
+# Old URLs
+/portfolio   /solutions   301
+/careers     /jobs        301
+

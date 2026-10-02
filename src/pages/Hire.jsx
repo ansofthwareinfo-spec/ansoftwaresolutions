@@ -24,11 +24,7 @@ const NEXT_STEPS = [
 export default function Hire() {
   return (
     <>
-      <Seo
-        image="/og/hire.jpg"
-        title="Hire Talent"
-        description="Hire skilled, pre-screened professionals with A&N Software Solutions: permanent, contract, contract-to-hire, leadership, fresher and bulk hiring across development, support, operations, sales and management roles."
-      />
+      <Seo />
 
       <PageHero
         eyebrow="Hire talent"

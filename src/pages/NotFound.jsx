@@ -6,7 +6,7 @@ import styles from './NotFound.module.css'
 export default function NotFound() {
   return (
     <section className={styles.page}>
-      <Seo title="Page Not Found" description="The page you are looking for could not be found." noindex />
+      <Seo />
       <div className={`container ${styles.inner}`}>
         <p className={styles.code} aria-hidden="true">
           404

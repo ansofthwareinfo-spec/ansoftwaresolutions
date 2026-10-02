@@ -17,7 +17,7 @@ import WhyChooseUsSection from '@/sections/shared/WhyChooseUsSection'
 export default function Home() {
   return (
     <>
-      <Seo image="/og/home.jpg" />
+      <Seo />
       <Hero />
       <Marquee items={FEATURED_ROLES} label="Roles we recruit for" />
       <HiringServicesSection soft />

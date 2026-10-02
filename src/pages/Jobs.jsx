@@ -37,11 +37,7 @@ export default function Jobs() {
 
   return (
     <>
-      <Seo
-        image="/og/jobs.jpg"
-        title="Jobs"
-        description="Browse current job openings with companies hiring through A&N Software Solutions, or upload your resume. Opportunities for freshers and experienced professionals."
-      />
+      <Seo />
 
       <PageHero
         eyebrow="Jobs"

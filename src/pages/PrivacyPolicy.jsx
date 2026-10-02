@@ -6,7 +6,7 @@ import { PRIVACY_POLICY } from '@/data/legal'
 export default function PrivacyPolicy() {
   return (
     <>
-      <Seo image="/og/privacy-policy.jpg" title="Privacy Policy" description="How A&N Software Solutions collects, uses and protects your personal information." />
+      <Seo />
       <PageHero
         title="Privacy Policy"
         description="Your privacy matters to us. This policy explains what data we collect and how we use it."

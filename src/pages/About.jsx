@@ -44,11 +44,7 @@ const OFFERINGS = [
 export default function About() {
   return (
     <>
-      <Seo
-        image="/og/about.jpg"
-        title="About Us"
-        description="A&N Software Solutions is a Hyderabad-based company helping organisations hire skilled professionals and build dependable technology. Learn who we are and how we work."
-      />
+      <Seo />
 
       <PageHero
         eyebrow="About us"

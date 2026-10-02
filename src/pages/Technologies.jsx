@@ -18,11 +18,7 @@ export default function Technologies() {
 
   return (
     <>
-      <Seo
-        image="/og/technologies.jpg"
-        title="Technologies"
-        description="The tools A&N Software Solutions works with across web, mobile, cloud, data, business intelligence, AI and automation, and how we choose the right ones for you."
-      />
+      <Seo />
 
       <PageHero
         eyebrow="Technologies"

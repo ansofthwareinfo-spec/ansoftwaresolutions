@@ -27,7 +27,7 @@ OG_DIR = PUBLIC / "og"
 CACHE = Path(__file__).resolve().parent / ".cache"
 
 SITE_NAME = "A&N Software Solutions"
-SITE_DOMAIN = "ansoftwaresolutions.com"
+SITE_DOMAIN = "ansoftwaresolutions.in"
 TAGLINE = "Efficiency powered by innovation"
 
 # Colours sampled from the logo

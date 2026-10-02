@@ -24,7 +24,7 @@ export default function ServiceDetail() {
 
   return (
     <>
-      <Seo image={`/og/services-${slug}.jpg`} title={title} description={`${short} ${title} services from A&N Software Solutions, Hyderabad.`} />
+      <Seo />
 
       <PageHero
         eyebrow="Service"

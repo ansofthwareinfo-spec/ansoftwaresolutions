@@ -23,11 +23,7 @@ const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(contact.mapQ
 export default function Contact() {
   return (
     <>
-      <Seo
-        image="/og/contact.jpg"
-        title="Contact Us"
-        description="Contact A&N Software Solutions in Hyderabad about hiring, job opportunities or technology projects. Call +91 63007 21736 or send us a message."
-      />
+      <Seo />
 
       <PageHero
         eyebrow="Contact us"

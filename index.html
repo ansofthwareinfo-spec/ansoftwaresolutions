@@ -1,37 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary SEO (defaults; each page overrides these at runtime) -->
-    <title>A&amp;N Software Solutions | IT Recruitment &amp; Technology Services in Hyderabad</title>
+    <!--
+      Page-specific SEO. These defaults are for the home page; at build time
+      scripts/prerender.mjs writes a copy of this file for every route with its own
+      title, description, canonical URL and social tags (from src/config/pageMeta.js).
+    -->
+    <title>A&amp;N Software Solutions | Recruitment &amp; IT Services in Hyderabad</title>
     <meta
       name="description"
-      content="A&amp;N Software Solutions helps companies hire skilled, pre-screened professionals for permanent, contract and leadership roles, and delivers software, data, AI and cloud services. Based in Hyderabad."
+      content="Hire skilled, pre-screened professionals for permanent, contract and leadership roles, plus software, data, AI and cloud services. Based in Hyderabad."
     />
-    <meta name="keywords" content="A&amp;N Software Solutions, recruitment, staffing, hire developers, BPO hiring, customer support hiring, contract staffing, jobs in Hyderabad, software engineering, data and analytics, artificial intelligence, cloud computing, Hyderabad" />
-    <meta name="author" content="A&amp;N Software Solutions" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#042351" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <link rel="canonical" href="https://www.ansoftwaresolutions.com/" />
+    <link rel="canonical" href="https://ansoftwaresolutions.in/" />
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="A&amp;N Software Solutions" />
-    <meta property="og:title" content="A&amp;N Software Solutions | Efficiency powered by innovation" />
-    <meta property="og:description" content="Hire skilled, pre-screened professionals, and get software, data, AI and cloud work done. Based in Hyderabad." />
-    <meta property="og:url" content="https://www.ansoftwaresolutions.com/" />
-    <meta property="og:image" content="https://www.ansoftwaresolutions.com/og/home.jpg" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:title" content="A&amp;N Software Solutions | Recruitment &amp; IT Services in Hyderabad" />
+    <meta
+      property="og:description"
+      content="Hire skilled, pre-screened professionals for permanent, contract and leadership roles, plus software, data, AI and cloud services. Based in Hyderabad."
+    />
+    <meta property="og:url" content="https://ansoftwaresolutions.in/" />
+    <meta property="og:image" content="https://ansoftwaresolutions.in/og/home.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="A&amp;N Software Solutions — Efficiency powered by innovation" />
-    <meta property="og:locale" content="en_IN" />
+    <meta property="og:image:alt" content="A&amp;N Software Solutions | Recruitment &amp; IT Services in Hyderabad" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="A&amp;N Software Solutions | Efficiency powered by innovation" />
-    <meta name="twitter:description" content="Hire skilled, pre-screened professionals, and get software, data, AI and cloud work done. Based in Hyderabad." />
-    <meta name="twitter:image" content="https://www.ansoftwaresolutions.com/og/home.jpg" />
+    <meta name="twitter:title" content="A&amp;N Software Solutions | Recruitment &amp; IT Services in Hyderabad" />
+    <meta
+      name="twitter:description"
+      content="Hire skilled, pre-screened professionals for permanent, contract and leadership roles, plus software, data, AI and cloud services. Based in Hyderabad."
+    />
+    <meta name="twitter:image" content="https://ansoftwaresolutions.in/og/home.jpg" />
+
+    <!--
+      Google Search Console: DNS (TXT record) verification is recommended.
+      If you choose the HTML-tag method instead, paste the tag Google gives you here, e.g.
+      <meta name="google-site-verification" content="YOUR-CODE" />
+    -->
+
+    <meta name="theme-color" content="#042351" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no" />
 
     <!-- Icons & manifest -->
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -39,37 +55,78 @@
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" as="image" href="/brand/logo-mark-96.webp" type="image/webp" />
-
     <link rel="preconnect" href="https://images.unsplash.com" />
 
     <!-- Structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "A&N Software Solutions",
-        "url": "https://www.ansoftwaresolutions.com/",
-        "logo": "https://www.ansoftwaresolutions.com/brand/logo-512.png",
-        "image": "https://www.ansoftwaresolutions.com/og/home.jpg",
-        "slogan": "Efficiency powered by innovation",
-        "description": "A&N Software Solutions helps organizations hire skilled professionals and transform challenges into opportunities through technology, data, and intelligent solutions.",
-        "knowsAbout": ["IT Recruitment", "Staffing", "Software Engineering", "Data & Analytics", "Artificial Intelligence", "Business Intelligence", "Cloud Computing", "Automation", "Digital Transformation"],
-        "email": "info@ansoftwaresolutions.com",
-        "telephone": "+91-63007-21736",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Hyderabad",
-          "addressRegion": "Telangana",
-          "postalCode": "500082",
-          "addressCountry": "IN"
-        },
-        "sameAs": ["https://www.linkedin.com/company/a-nsoftwaresolutions/"]
+        "@graph": [
+          {
+            "@type": "EmploymentAgency",
+            "@id": "https://ansoftwaresolutions.in/#organization",
+            "name": "A&N Software Solutions",
+            "url": "https://ansoftwaresolutions.in/",
+            "logo": "https://ansoftwaresolutions.in/brand/logo-512.png",
+            "image": "https://ansoftwaresolutions.in/og/home.jpg",
+            "slogan": "Efficiency powered by innovation",
+            "description": "A&N Software Solutions helps companies hire skilled, pre-screened professionals and delivers software engineering, data & analytics, AI, business intelligence, cloud and automation services.",
+            "email": "info@ansoftwaresolutions.in",
+            "telephone": "+91-63007-21736",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Hyderabad",
+              "addressRegion": "Telangana",
+              "postalCode": "500082",
+              "addressCountry": "IN"
+            },
+            "areaServed": { "@type": "Country", "name": "India" },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-63007-21736",
+              "email": "info@ansoftwaresolutions.in",
+              "contactType": "customer service",
+              "areaServed": "IN",
+              "availableLanguage": "English"
+            },
+            "knowsAbout": [
+              "Recruitment",
+              "Staffing",
+              "Contract staffing",
+              "Software Engineering",
+              "Data & Analytics",
+              "Artificial Intelligence",
+              "Business Intelligence",
+              "Cloud Computing",
+              "Automation",
+              "Digital Transformation"
+            ],
+            "sameAs": ["https://www.linkedin.com/company/a-nsoftwaresolutions/"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://ansoftwaresolutions.in/#website",
+            "url": "https://ansoftwaresolutions.in/",
+            "name": "A&N Software Solutions",
+            "inLanguage": "en-IN",
+            "publisher": { "@id": "https://ansoftwaresolutions.in/#organization" }
+          }
+        ]
       }
     </script>
   </head>
   <body>
     <noscript>
-      Please enable JavaScript to view the A&amp;N Software Solutions website.
+      <h1>A&amp;N Software Solutions</h1>
+      <p>
+        Recruitment and staffing for companies, job opportunities for candidates, and software, data, AI and cloud
+        services. Based in Hyderabad, India. Call +91 63007 21736 or email info@ansoftwaresolutions.in.
+      </p>
+      <p>
+        <a href="/hire">Hire Talent</a> · <a href="/jobs">Jobs</a> · <a href="/services">Services</a> ·
+        <a href="/about">About</a> · <a href="/contact">Contact</a>
+      </p>
+      <p>Please enable JavaScript for the full website.</p>
     </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

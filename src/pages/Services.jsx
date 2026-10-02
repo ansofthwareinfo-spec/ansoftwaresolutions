@@ -19,11 +19,7 @@ import styles from './Services.module.css'
 export default function Services() {
   return (
     <>
-      <Seo
-        image="/og/services.jpg"
-        title="Our Services"
-        description="Software engineering, data & analytics, artificial intelligence, business intelligence, cloud computing, automation and digital transformation services from A&N Software Solutions, Hyderabad."
-      />
+      <Seo />
 
       <PageHero
         eyebrow="Technology services"

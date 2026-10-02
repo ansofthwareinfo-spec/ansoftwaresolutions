@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { absoluteUrl, canonicalUrl, fullTitle, getPageMeta } from '@/config/pageMeta'
 import { SITE } from '@/config/site'
 
 function upsertMeta(attr, key, content) {
@@ -23,34 +24,33 @@ function upsertCanonical(href) {
 }
 
 /**
- * Updates the document's title, description, canonical and social tags
- * per page. Updates existing tags in place so nothing is duplicated.
- * `image` is a path under /public, e.g. "/og/about.jpg".
+ * Keeps the document head in sync with the current route during client-side
+ * navigation. Metadata comes from src/config/pageMeta.js — the same data the
+ * build uses to write each page's static HTML, so the two never disagree.
  */
-export default function Seo({ title, description = SITE.defaultDescription, image = SITE.ogImage, noindex = false }) {
+export default function Seo() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    const fullTitle = title ? `${title} | ${SITE.name}` : SITE.defaultTitle
-    const url = `${SITE.url}${pathname === '/' ? '/' : pathname}`
-    const imageUrl = image.startsWith('http') ? image : `${SITE.url}${image}`
+    const meta = getPageMeta(pathname)
+    const title = fullTitle(meta.title)
+    const description = meta.description ?? SITE.defaultDescription
+    const image = absoluteUrl(meta.image ?? SITE.ogImage)
+    const url = canonicalUrl(pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname)
 
-    document.title = fullTitle
+    document.title = title
     upsertMeta('name', 'description', description)
-    upsertMeta('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow')
-    upsertMeta('property', 'og:title', fullTitle)
+    upsertMeta('name', 'robots', meta.noindex ? 'noindex, follow' : 'index, follow')
+    upsertMeta('property', 'og:title', title)
     upsertMeta('property', 'og:description', description)
     upsertMeta('property', 'og:url', url)
-    upsertMeta('property', 'og:image', imageUrl)
-    upsertMeta('property', 'og:image:width', String(SITE.ogImageSize.width))
-    upsertMeta('property', 'og:image:height', String(SITE.ogImageSize.height))
-    upsertMeta('property', 'og:image:alt', fullTitle)
-    upsertMeta('name', 'twitter:card', 'summary_large_image')
-    upsertMeta('name', 'twitter:title', fullTitle)
+    upsertMeta('property', 'og:image', image)
+    upsertMeta('property', 'og:image:alt', title)
+    upsertMeta('name', 'twitter:title', title)
     upsertMeta('name', 'twitter:description', description)
-    upsertMeta('name', 'twitter:image', imageUrl)
+    upsertMeta('name', 'twitter:image', image)
     upsertCanonical(url)
-  }, [title, description, image, noindex, pathname])
+  }, [pathname])
 
   return null
 }

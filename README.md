@@ -28,12 +28,13 @@ npm run lint      # oxlint
 | Privacy policy & terms | `src/data/legal.js` |
 | Images (Unsplash ids or `/images/...` paths) | `src/utils/image.js` |
 | Colours, fonts, spacing | `src/styles/variables.css` |
-| Default SEO tags / JSON-LD | `index.html` |
+| Page titles, descriptions & share images (all pages) | `src/config/pageMeta.js` |
+| Structured data (JSON-LD) & default head tags | `index.html` |
 | Logo, favicons, app icons, social share images | `public/logo.jpg` → run the generator below |
-| Sitemap / robots | `public/sitemap.xml`, `public/robots.txt` |
+| Domain, contact details | `src/config/site.js` |
 
-Also replace `https://www.ansoftwaresolutions.com` with your real domain in `src/config/site.js`,
-`index.html`, `public/sitemap.xml` and `public/robots.txt`.
+The site domain is `https://ansoftwaresolutions.in` (set in `src/config/site.js` and the JSON-LD in
+`index.html`). Point `www.ansoftwaresolutions.in` to the same site with a redirect to the bare domain.
 
 To use your own images, put them in `public/images/` and reference them as `/images/your-file.jpg`.
 If a remote image fails to load, a placeholder is shown automatically.
@@ -53,12 +54,23 @@ This writes:
 - `public/favicon.ico`
 - `public/og/*.jpg` — a 1200×630 social share image for every page and every service
 
-Re-run it whenever you change the logo, a page headline or a service. Each page passes its
-image to `<Seo image="/og/<page>.jpg" />`.
+Re-run it whenever you change the logo, a page headline or a service.
 
-> Social networks (LinkedIn, WhatsApp, X) do not run JavaScript, so link previews always use the
-> defaults in `index.html` (the home image). For per-page previews, add prerendering later
-> (e.g. `vite-plugin-prerender`) — Google does read the per-page tags.
+## SEO
+
+`npm run build` runs `vite build` and then `scripts/prerender.mjs`, which uses `src/config/pageMeta.js` to:
+
+- write one HTML file per route (`about.html`, `services/automation.html`, …) with that page's own
+  title, description, canonical URL and Open Graph / Twitter tags, so Google and link previews on
+  LinkedIn, WhatsApp and X show the right page details
+- write `404.html` (noindex) so unknown URLs return a real 404
+- generate `sitemap.xml` (with today's date) and `robots.txt`
+
+To add a page: add its route in `src/App.jsx` and its entry in `src/config/pageMeta.js`.
+Old URLs (`/portfolio`, `/careers`) redirect permanently via `public/_redirects` and `vercel.json`.
+
+After going live: verify the domain in Google Search Console (DNS TXT record is easiest), submit
+`https://ansoftwaresolutions.in/sitemap.xml`, and create a Google Business Profile for the office.
 
 ## Forms
 

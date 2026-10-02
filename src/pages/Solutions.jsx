@@ -14,11 +14,7 @@ export default function Solutions() {
 
   return (
     <>
-      <Seo
-        image="/og/solutions.jpg"
-        title="Solutions"
-        description="Examples of the software, data, AI, cloud and automation solutions A&N Software Solutions can build, from online stores and ERP to dashboards and AI assistants."
-      />
+      <Seo />
 
       <PageHero
         eyebrow="Solutions"
