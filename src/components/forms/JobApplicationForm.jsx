@@ -6,17 +6,15 @@ import { useForm } from '@/hooks/useForm'
 import { submitForm } from '@/utils/submitForm'
 import {
   LIMITS,
-  RESUME_ACCEPT,
   validateEmail,
   validateLinkedIn,
   validateMessage,
   validateName,
   validatePhone,
   validateRequired,
-  validateResume,
+  validateResumeLink,
 } from '@/utils/validators'
 import CheckboxField from './CheckboxField'
-import FileField from './FileField'
 import FormField from './FormField'
 import FormSuccess from './FormSuccess'
 import Honeypot from './Honeypot'
@@ -36,7 +34,7 @@ const INITIAL_VALUES = {
   location: '',
   noticePeriod: '',
   linkedin: '',
-  resume: null,
+  resumeLink: '',
   coverLetter: '',
   consent: false,
   website: '',
@@ -52,13 +50,13 @@ const validate = (v) => ({
   location: validateRequired(v.location, 'Current location is required'),
   noticePeriod: validateRequired(v.noticePeriod, 'Please select your notice period'),
   linkedin: validateLinkedIn(v.linkedin),
-  resume: validateResume(v.resume),
+  resumeLink: validateResumeLink(v.resumeLink),
   coverLetter: validateMessage(v.coverLetter, { required: false, min: 20 }),
   consent: v.consent ? '' : 'Please accept the privacy policy to continue',
 })
 
 /**
- * Candidate application form (frontend only).
+ * Candidate application form. Candidates share their resume as a Google Drive / OneDrive / Dropbox link.
  * `selectedPosition` pre-fills the role whenever a job's "Apply" button is clicked.
  */
 export default function JobApplicationForm({ positions, selectedPosition, selectionKey }) {
@@ -73,11 +71,7 @@ export default function JobApplicationForm({ positions, selectedPosition, select
     if (selectedPosition) setFieldValue('position', selectedPosition)
   }
 
-  const onSubmit = handleSubmit(async (data) => {
-    const { resume, ...rest } = data
-    // A real backend would receive the file via multipart/form-data.
-    await submitForm('job-application', { ...rest, resumeName: resume?.name })
-  })
+  const onSubmit = handleSubmit((data) => submitForm('job-application', data))
 
   if (status === 'success') {
     const firstName = values.fullName.trim().split(/\s+/)[0]
@@ -135,19 +129,16 @@ export default function JobApplicationForm({ positions, selectedPosition, select
         <FormField {...register('location')} label="Current location" placeholder="City, State" autoComplete="address-level2" maxLength={LIMITS.company} required />
         <FormField {...register('linkedin')} type="url" label="LinkedIn profile" placeholder="https://linkedin.com/in/yourname" maxLength={LIMITS.url} hint="Optional" className={styles.span2} />
 
-        <div className={styles.span2}>
-          <FileField
-            id="resume"
-            name="resume"
-            label="Resume / CV"
-            file={values.resume}
-            error={register('resume').error}
-            accept={RESUME_ACCEPT}
-            hint="PDF, DOC or DOCX, up to 5 MB"
-            onFile={(name, file) => setFieldValue(name, file, { touch: true })}
-            required
-          />
-        </div>
+        <FormField
+          {...register('resumeLink')}
+          type="url"
+          label="Resume link"
+          placeholder="https://drive.google.com/file/d/..."
+          maxLength={LIMITS.url}
+          hint="Google Drive, OneDrive or Dropbox link. Set sharing to “Anyone with the link” so we can open it."
+          className={styles.span2}
+          required
+        />
 
         <FormField
           {...register('coverLetter')}

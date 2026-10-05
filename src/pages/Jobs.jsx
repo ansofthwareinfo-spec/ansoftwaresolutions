@@ -1,4 +1,4 @@
-import { ArrowDown, GraduationCap, Mail, Search, Upload } from 'lucide-react'
+import { ArrowDown, GraduationCap, Mail, Search, Send } from 'lucide-react'
 import { useRef, useState } from 'react'
 import JobCard from '@/components/cards/JobCard'
 import Button from '@/components/common/Button'
@@ -51,8 +51,8 @@ export default function Jobs() {
         <Button href="#openings" icon={ArrowDown}>
           Browse Openings
         </Button>
-        <Button href="#apply" variant="outline" icon={Upload} iconPosition="left">
-          Upload Your Resume
+        <Button href="#apply" variant="outline" icon={Send} iconPosition="left">
+          Send Your Resume
         </Button>
       </PageHero>
 
@@ -94,8 +94,8 @@ export default function Jobs() {
             <div className={styles.empty}>
               <p className={styles.emptyTitle}>No openings match your search right now.</p>
               <p>Send us your resume and we will contact you when a suitable role comes up.</p>
-              <Button href="#apply" variant="outline" icon={Upload} iconPosition="left">
-                Upload Your Resume
+              <Button href="#apply" variant="outline" icon={Send} iconPosition="left">
+                Send Your Resume
               </Button>
             </div>
           )}

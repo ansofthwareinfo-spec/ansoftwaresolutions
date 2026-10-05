@@ -76,9 +76,12 @@ After going live: verify the domain in Google Search Console (DNS TXT record is 
 
 ## Forms
 
-Contact, hiring requirement, job application and newsletter forms validate in the browser and show a success message.
-They do **not** send data anywhere yet — connect a backend or a form service
-(Formspree, EmailJS, etc.) in `src/utils/submitForm.js`. Always re-validate on the server.
+All forms validate in the browser and show a success message.
+
+- **Contact and job application forms:** saved to Google Sheets (`contactus` and `jobs` tabs) through a Google Apps Script Web app. Setup steps are in
+  [`google-apps-script/README.md`](google-apps-script/README.md); the site needs `VITE_FORMS_ENDPOINT` (see `.env.example`).
+- **Hiring requirement and newsletter forms:** not connected yet (simulated) — add them to
+  `SHEET_FORMS` in `src/utils/submitForm.js` and to `FORMS` in the Apps Script when ready.
 
 ## Project structure
 

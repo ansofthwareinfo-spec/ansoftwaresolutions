@@ -10,22 +10,15 @@ export const LIMITS = {
   company: 100,
   url: 200,
   message: 2000,
-  fileBytes: 5 * 1024 * 1024,
 }
 
 const EMAIL_RE = /^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[a-z]{2,}$/i
 const NAME_RE = /^[\p{L}][\p{L}\s.'-]*$/u
 const PHONE_RE = /^\+?[\d\s()-]{7,20}$/
 const LINKEDIN_RE = /^https:\/\/([a-z]{2,3}\.)?linkedin\.com\/.+$/i
-
-const ALLOWED_RESUME = {
-  extensions: ['pdf', 'doc', 'docx'],
-  mimeTypes: [
-    'application/pdf',
-    'application/msword',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  ],
-}
+/** Resume links: Google Drive / Docs, OneDrive (incl. SharePoint) or Dropbox. */
+const RESUME_LINK_RE =
+  /^https:\/\/(drive\.google\.com|docs\.google\.com|onedrive\.live\.com|1drv\.ms|[\w-]+\.sharepoint\.com|(www\.)?dropbox\.com)\/\S+$/i
 
 export const isBlank = (v) => v == null || String(v).trim() === ''
 
@@ -72,17 +65,14 @@ export function validateLinkedIn(value) {
   return ''
 }
 
-export function validateResume(file) {
-  if (!file) return 'Please upload your resume'
-  const ext = file.name.split('.').pop()?.toLowerCase() ?? ''
-  const typeOk = !file.type || ALLOWED_RESUME.mimeTypes.includes(file.type)
-  if (!ALLOWED_RESUME.extensions.includes(ext) || !typeOk) return 'Only PDF, DOC or DOCX files are allowed'
-  if (file.size > LIMITS.fileBytes) return 'File size must be 5 MB or less'
-  if (file.size === 0) return 'The selected file is empty'
+export function validateResumeLink(value) {
+  const v = String(value ?? '').trim()
+  if (!v) return 'Please add a link to your resume'
+  if (v.length > LIMITS.url || !RESUME_LINK_RE.test(v)) {
+    return 'Please enter a Google Drive, OneDrive or Dropbox link to your resume'
+  }
   return ''
 }
-
-export const RESUME_ACCEPT = '.pdf,.doc,.docx'
 
 /** Removes empty-string entries so `Object.keys(errors).length` means "has errors". */
 export function compactErrors(errors) {

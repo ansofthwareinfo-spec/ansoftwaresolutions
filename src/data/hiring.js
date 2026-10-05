@@ -147,7 +147,7 @@ export const HIRING_HIGHLIGHTS = [
 ]
 
 export const CANDIDATE_STEPS = [
-  { title: 'Send your profile', text: 'Apply for an opening or upload your resume to be considered for future roles.' },
+  { title: 'Send your profile', text: 'Apply for an opening or share your resume to be considered for future roles.' },
   { title: 'We get in touch', text: 'If your profile matches a role, we call you to talk about the job and your expectations.' },
   { title: 'Interview', text: 'We share the job details, help you prepare and schedule the interview with the company.' },
   { title: 'Offer', text: 'We guide you through the offer and stay in touch until you join.' },

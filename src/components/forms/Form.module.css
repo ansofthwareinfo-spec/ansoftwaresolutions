@@ -74,8 +74,7 @@
   cursor: pointer;
 }
 
-.hasError .control,
-.hasError .dropzone {
+.hasError .control {
   border-color: var(--c-error);
   background-color: var(--c-error-50);
 }
@@ -89,90 +88,6 @@
   font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--c-error);
-}
-
-/* File upload */
-.dropzone {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 1.6rem 1rem;
-  text-align: center;
-  font-size: var(--fs-sm);
-  color: var(--c-muted);
-  background: var(--c-bg-soft);
-  border: 1.5px dashed #c3cde3;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition:
-    border-color var(--dur) var(--ease),
-    background-color var(--dur) var(--ease);
-}
-
-.dropzone svg {
-  color: var(--c-primary);
-}
-
-.dropzone strong {
-  color: var(--c-primary);
-}
-
-.dropzone:hover,
-.dragging {
-  border-color: var(--c-primary);
-  background: var(--c-primary-50);
-}
-
-.field:has(input[type='file']:focus-visible) .dropzone {
-  outline: 3px solid var(--c-accent);
-  outline-offset: 3px;
-}
-
-.fileChosen {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.9rem 1rem;
-  color: var(--c-primary);
-  background: var(--c-primary-50);
-  border: 1.5px solid var(--c-primary-100);
-  border-radius: var(--radius-sm);
-}
-
-.fileMeta {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  flex: 1;
-  line-height: 1.35;
-}
-
-.fileMeta strong {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: var(--c-ink);
-  font-size: var(--fs-sm);
-}
-
-.fileMeta span {
-  font-size: var(--fs-xs);
-  color: var(--c-muted);
-}
-
-.fileRemove {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  color: var(--c-muted);
-}
-
-.fileRemove:hover {
-  color: var(--c-error);
-  background: #fff;
 }
 
 /* Checkbox */
