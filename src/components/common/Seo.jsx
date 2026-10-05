@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { absoluteUrl, canonicalUrl, fullTitle, getPageMeta } from '@/config/pageMeta'
+import { ROBOTS_INDEX, ROBOTS_NOINDEX, absoluteUrl, canonicalUrl, fullTitle, getPageMeta } from '@/config/pageMeta'
 import { SITE } from '@/config/site'
 
 function upsertMeta(attr, key, content) {
@@ -40,7 +40,8 @@ export default function Seo() {
 
     document.title = title
     upsertMeta('name', 'description', description)
-    upsertMeta('name', 'robots', meta.noindex ? 'noindex, follow' : 'index, follow')
+    upsertMeta('name', 'robots', meta.noindex ? ROBOTS_NOINDEX : ROBOTS_INDEX)
+    upsertMeta('name', 'keywords', (meta.keywords ?? []).join(', '))
     upsertMeta('property', 'og:title', title)
     upsertMeta('property', 'og:description', description)
     upsertMeta('property', 'og:url', url)
