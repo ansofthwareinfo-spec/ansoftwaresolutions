@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.ansoftwaresolutions.in/sitemap.xml

@@ -64,9 +64,11 @@ Re-run it whenever you change the logo, a page headline or a service.
   title, description, canonical URL and Open Graph / Twitter tags, so Google and link previews on
   LinkedIn, WhatsApp and X show the right page details
 - write `404.html` (noindex) so unknown URLs return a real 404
-- generate `sitemap.xml` (with today's date) and `robots.txt`
 
-To add a page: add its route in `src/App.jsx` and its entry in `src/config/pageMeta.js`.
+`public/sitemap.xml` and `public/robots.txt` are written by hand and copied to the site as-is.
+When a page is added or its content changes, update its `<lastmod>` date in `public/sitemap.xml`.
+
+To add a page: add its route in `src/App.jsx`, its entry in `src/config/pageMeta.js` and its URL in `public/sitemap.xml`.
 Old URLs (`/portfolio`, `/careers`) redirect permanently via `public/_redirects` and `vercel.json`.
 
 After going live: verify the domain in Google Search Console (DNS TXT record is easiest), submit
