@@ -33,8 +33,8 @@ npm run lint      # oxlint
 | Logo, favicons, app icons, social share images | `public/logo.jpg` → run the generator below |
 | Domain, contact details | `src/config/site.js` |
 
-The site domain is `https://ansoftwaresolutions.in` (set in `src/config/site.js` and the JSON-LD in
-`index.html`). Point `www.ansoftwaresolutions.in` to the same site with a redirect to the bare domain.
+The site's canonical domain is `https://www.ansoftwaresolutions.in` (set in `src/config/site.js` and
+the JSON-LD in `index.html`). The bare domain `ansoftwaresolutions.in` redirects to it (Vercel domain settings).
 
 To use your own images, put them in `public/images/` and reference them as `/images/your-file.jpg`.
 If a remote image fails to load, a placeholder is shown automatically.
@@ -70,7 +70,7 @@ To add a page: add its route in `src/App.jsx` and its entry in `src/config/pageM
 Old URLs (`/portfolio`, `/careers`) redirect permanently via `public/_redirects` and `vercel.json`.
 
 After going live: verify the domain in Google Search Console (DNS TXT record is easiest), submit
-`https://ansoftwaresolutions.in/sitemap.xml`, and create a Google Business Profile for the office.
+`https://www.ansoftwaresolutions.in/sitemap.xml`, and create a Google Business Profile for the office.
 
 ## Forms
 

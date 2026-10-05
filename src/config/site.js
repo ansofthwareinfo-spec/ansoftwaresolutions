@@ -7,7 +7,7 @@ export const SITE = {
   shortName: 'A&N Software',
   legalName: 'A&N Software Solutions',
   tagline: 'Efficiency powered by innovation',
-  url: 'https://ansoftwaresolutions.in',
+  url: 'https://www.ansoftwaresolutions.in',
   defaultTitle: 'A&N Software Solutions | Recruitment & IT Services in Hyderabad',
   defaultDescription:
     'Hire skilled, pre-screened professionals for permanent, contract and leadership roles, plus software, data, AI and cloud services. Based in Hyderabad.',
