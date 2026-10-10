@@ -11,6 +11,16 @@ import { SITE } from './site'
  *  - description: 140–160 characters, says who it is for, where, and what to do next
  *  - keywords: a few accurate phrases (Google ignores this tag; keep it short to avoid spam signals)
  */
+/** Brand-name searches: the spellings people type for "A&N Software Solutions". */
+const BRAND_KEYWORDS = [
+  'AN Software Solutions',
+  'A and N Software Solutions',
+  'A N Software Solutions',
+  'A&N Software',
+  'AN Software Solutions Hyderabad',
+  'ansoftwaresolutions',
+]
+
 const STATIC_PAGES = {
   '/': {
     title: null, // uses SITE.defaultTitle
@@ -23,6 +33,7 @@ const STATIC_PAGES = {
       'BPO hiring',
       'IT services company Hyderabad',
       'A&N Software Solutions',
+      ...BRAND_KEYWORDS,
     ],
     image: '/og/home.jpg',
   },
@@ -107,20 +118,29 @@ const STATIC_PAGES = {
   '/about': {
     title: 'About Us: Recruitment & IT Firm in Hyderabad',
     description:
-      'A&N Software Solutions is a Hyderabad-based company that helps organisations hire skilled professionals and build dependable software, data and cloud solutions.',
+      'A&N Software Solutions (AN Software Solutions) is a Hyderabad firm helping companies hire skilled professionals and build software, data and cloud solutions.',
     keywords: [
       'about A&N Software Solutions',
       'recruitment company Hyderabad',
       'IT company Hyderabad',
       'talent and technology partner',
+      'about AN Software Solutions',
+      ...BRAND_KEYWORDS,
     ],
     image: '/og/about.jpg',
   },
   '/contact': {
     title: 'Contact Us: Hire Talent or Start a Project',
     description:
-      'Contact A&N Software Solutions in Hyderabad about hiring, job openings or technology projects. Call +91 63007 21736 or send a message. We reply within a day.',
-    keywords: ['contact A&N Software Solutions', 'recruitment agency contact Hyderabad', 'hire talent Hyderabad'],
+      'Contact A&N (AN) Software Solutions in Hyderabad about hiring, jobs or technology projects. Call +91 63007 21736 or send a message. We reply within a day.',
+    keywords: [
+      'contact A&N Software Solutions',
+      'recruitment agency contact Hyderabad',
+      'hire talent Hyderabad',
+      'contact AN Software Solutions',
+      'A and N Software Solutions contact number',
+      'AN Software Solutions Hyderabad',
+    ],
     image: '/og/contact.jpg',
   },
   '/privacy-policy': {

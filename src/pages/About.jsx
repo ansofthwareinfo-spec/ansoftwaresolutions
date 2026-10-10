@@ -71,8 +71,8 @@ export default function About() {
             <SectionHeading align="left" eyebrow="Our story" title={<span id="story-title">Who we are</span>} />
             <Reveal className={styles.storyText}>
               <p>
-                {SITE.name} helps organisations grow in two ways: by finding them the right people, and by building the
-                technology those people work with.
+                {SITE.name} (also written as AN Software Solutions) helps organisations grow in two ways: by finding
+                them the right people, and by building the technology those people work with.
               </p>
               <p>
                 Our recruitment practice connects companies with skilled professionals for permanent, contract and

@@ -17,8 +17,8 @@ export default function Footer() {
         <div className={styles.brand}>
           <Logo tone="light" />
           <p className={styles.about}>
-            {SITE.name} helps companies hire skilled professionals and build dependable technology, from our base
-            in Hyderabad.
+            {SITE.name} (AN Software Solutions) helps companies hire skilled professionals and build dependable
+            technology, from our base in Hyderabad.
           </p>
           <SocialLinks tone="light" />
         </div>
