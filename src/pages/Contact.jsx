@@ -1,4 +1,6 @@
-import { Building2, Mail, MapPin, Phone } from 'lucide-react'
+import { Building2, Mail, Map as MapIcon, MapPin, Phone } from 'lucide-react'
+import { useState } from 'react'
+import Button from '@/components/common/Button'
 import PageHero from '@/components/common/PageHero'
 import Reveal from '@/components/common/Reveal'
 import Seo from '@/components/common/Seo'
@@ -19,8 +21,11 @@ const CHANNELS = [
 ]
 
 const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(contact.mapQuery)}&output=embed`
+const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.mapQuery)}`
 
 export default function Contact() {
+  const [showMap, setShowMap] = useState(false)
+
   return (
     <>
       <Seo />
@@ -64,13 +69,28 @@ export default function Contact() {
 
             <aside className={styles.aside}>
               <div className={styles.map}>
-                <iframe
-                  title={`Map showing ${SITE.name} office location`}
-                  src={MAP_SRC}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  sandbox="allow-scripts allow-same-origin allow-popups"
-                />
+                {/* The Google Maps embed is ~500 KB, so it loads only when the visitor asks for it. */}
+                {showMap ? (
+                  <iframe
+                    title={`Map showing ${SITE.name} office location`}
+                    src={MAP_SRC}
+                    referrerPolicy="no-referrer-when-downgrade"
+                    sandbox="allow-scripts allow-same-origin allow-popups"
+                  />
+                ) : (
+                  <div className={styles.mapPlaceholder}>
+                    <span className={styles.mapPin}>
+                      <MapPin size={28} aria-hidden="true" />
+                    </span>
+                    <p className={styles.mapAddress}>{fullAddress}</p>
+                    <Button size="sm" icon={MapIcon} iconPosition="left" onClick={() => setShowMap(true)}>
+                      Show map
+                    </Button>
+                    <a href={MAP_LINK} target="_blank" rel="noopener noreferrer" className={styles.mapLink}>
+                      Open in Google Maps
+                    </a>
+                  </div>
+                )}
               </div>
 
               <div className={styles.offices}>
