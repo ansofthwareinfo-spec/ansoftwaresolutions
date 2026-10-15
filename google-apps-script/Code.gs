@@ -2,8 +2,10 @@
  * A&N Software Solutions — website form receiver (Google Apps Script).
  *
  * Saves website form submissions as rows in this Google Sheet:
- *   Contact page form -> "contactus" tab
- *   Jobs page form    -> "jobs" tab (candidates share their resume as a Drive/OneDrive/Dropbox link)
+ *   Contact page form          -> "contactus" tab
+ *   Jobs page form             -> "jobs" tab (candidates share their resume as a Drive/OneDrive/Dropbox link)
+ *   Hire Talent requirement    -> "hiring" tab
+ *   Footer newsletter sign-up  -> "newsletter" tab
  *
  * Setup: see README.md in this folder. Paste this whole file into
  * Extensions > Apps Script of your Google Sheet, then deploy it as a Web app.
@@ -54,7 +56,31 @@ const FORMS = {
       ['consent', 'Consent'],
     ],
   },
+  'hiring-request': {
+    sheet: 'hiring',
+    fields: [
+      ['company', 'Company'],
+      ['fullName', 'Contact name'],
+      ['email', 'Email'],
+      ['phone', 'Phone'],
+      ['roles', 'Roles'],
+      ['positions', 'Positions'],
+      ['hiringModel', 'Hiring type'],
+      ['experience', 'Experience level'],
+      ['location', 'Job location'],
+      ['details', 'Notes'],
+      ['consent', 'Consent'],
+    ],
+  },
+  newsletter: {
+    sheet: 'newsletter',
+    fields: [['email', 'Email']],
+  },
 };
+
+/** Spam guard: at most this many submissions per email address within the window. */
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_SECONDS = 600;
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
@@ -70,6 +96,7 @@ function doPost(e) {
     if (data.form === 'job-application' && !isLink(data.resumeLink)) {
       return json({ ok: false, error: 'Invalid resume link' });
     }
+    if (isRateLimited(data.email)) return json({ ok: false, error: 'Too many submissions. Please try again later.' });
 
     lock.waitLock(20000);
     const sheet = getSheet(form);
@@ -121,6 +148,16 @@ function cell(value) {
 
 function isEmail(value) {
   return typeof value === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim());
+}
+
+/** Counts submissions per email in the script cache; true once the limit for the window is reached. */
+function isRateLimited(email) {
+  const cache = CacheService.getScriptCache();
+  const key = 'rl:' + Utilities.base64EncodeWebSafe(email.trim().toLowerCase()).slice(0, 200);
+  const count = Number(cache.get(key) || 0);
+  if (count >= RATE_LIMIT_MAX) return true;
+  cache.put(key, String(count + 1), RATE_LIMIT_WINDOW_SECONDS);
+  return false;
 }
 
 function isLink(value) {

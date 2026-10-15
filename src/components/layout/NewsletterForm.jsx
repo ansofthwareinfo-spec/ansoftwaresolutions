@@ -16,9 +16,14 @@ export default function NewsletterForm() {
     if (message || status === 'submitting') return
 
     setStatus('submitting')
-    await submitForm('newsletter', { email })
-    setStatus('success')
-    setEmail('')
+    try {
+      await submitForm('newsletter', { email })
+      setStatus('success')
+      setEmail('')
+    } catch {
+      setStatus('idle')
+      setError('Something went wrong. Please try again in a moment.')
+    }
   }
 
   if (status === 'success') {

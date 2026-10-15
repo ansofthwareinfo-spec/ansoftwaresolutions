@@ -1,16 +1,18 @@
-# Contact & job forms → Google Sheets
+# Website forms → Google Sheets
 
-Each Contact page and Jobs page submission is saved as a new row in one Google Sheet:
+Every website form submission is saved as a new row in one Google Sheet:
 
 | Website form | Sheet tab |
 |---|---|
 | Contact page | `contactus` |
 | Jobs page (job application) | `jobs` |
+| Hire Talent page (hiring requirement) | `hiring` |
+| Footer newsletter sign-up | `newsletter` |
 
 Candidates share their resume as a Google Drive, OneDrive or Dropbox link, saved in the **Resume link** column.
 
 ```
-Website form ──POST (JSON)──▶ Google Apps Script Web app ──▶ Google Sheet (contactus / jobs tab)
+Website form ──POST (JSON)──▶ Google Apps Script Web app ──▶ Google Sheet (one tab per form)
 ```
 
 ## 1. Create the sheet and the script
@@ -23,7 +25,7 @@ Website form ──POST (JSON)──▶ Google Apps Script Web app ──▶ Goo
 5. Optional: to get an email for each enquiry, set `NOTIFY_EMAIL` at the top, e.g. `'info@ansoftwaresolutions.in'`.
 6. Click **Save** (disk icon).
 
-The script adds the header row to an empty `contactus` or `jobs` tab on the first submission, and creates the tab if it doesn't exist.
+The script creates each tab if it doesn't exist and adds the header row to an empty tab on the first submission.
 
 ## 2. Deploy as a Web app
 
@@ -60,10 +62,15 @@ After editing the script, use **Deploy → Manage deployments → Edit (pencil) 
 This keeps the same Web app URL. Creating a *new deployment* instead gives a new URL,
 and the website would need the new one.
 
+Update the script **before** deploying a website version that sends a new form: the old script answers
+unknown forms with an error, which the website shows to the visitor.
+
 ## Notes
 
 - Text starting with `=`, `+`, `-` or `@` is saved with a leading `'` so it can't run as a spreadsheet formula
   (a phone number like `+91 …` shows normally in the sheet).
 - Submissions caught by the hidden spam field are accepted but not saved.
-- Without `VITE_FORMS_ENDPOINT`, these forms are simulated in local development and shows an error
+- Spam guard: one email address can submit at most 5 times in 10 minutes (`RATE_LIMIT_MAX`,
+  `RATE_LIMIT_WINDOW_SECONDS`); extra submissions get a "Too many submissions" error.
+- Without `VITE_FORMS_ENDPOINT`, these forms are simulated in local development and show an error
   on a production build, so a missing setting is never mistaken for a sent message.
