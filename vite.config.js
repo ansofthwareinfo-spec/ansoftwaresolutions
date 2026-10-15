@@ -13,5 +13,14 @@ export default defineConfig({
   build: {
     sourcemap: false,
     cssCodeSplit: true,
+    rolldownOptions: {
+      output: {
+        // Keep everything the first page load needs in the entry chunk (one JS + one CSS file)
+        // instead of several tiny shared chunks; lazy-loaded pages stay split.
+        codeSplitting: {
+          groups: [{ name: 'initial', tags: ['$initial'] }],
+        },
+      },
+    },
   },
 })
