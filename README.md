@@ -58,17 +58,24 @@ Re-run it whenever you change the logo, a page headline or a service.
 
 ## SEO
 
-`npm run build` runs `vite build` and then `scripts/prerender.mjs`, which uses `src/config/pageMeta.js` to:
+`npm run build` runs `vite build`, builds `src/entry-server.jsx` for Node (`dist-ssr/`, removed afterwards) and then
+runs `scripts/prerender.mjs`, which uses `src/config/pageMeta.js` to:
 
 - write one HTML file per route (`about.html`, `services/automation.html`, …) with that page's own
   title, description, canonical URL and Open Graph / Twitter tags, so Google and link previews on
   LinkedIn, WhatsApp and X show the right page details
+- render the page's content into the HTML, so it shows before JavaScript loads (`src/main.jsx` then
+  hydrates it), and preload that page's own JS/CSS and the two web fonts
 - write `404.html` (noindex) so unknown URLs return a real 404
+
+Components must render the same on the server and in the browser: read `window`/`document` only in
+effects or event handlers, never while rendering.
 
 `public/sitemap.xml` and `public/robots.txt` are written by hand and copied to the site as-is.
 When a page is added or its content changes, update its `<lastmod>` date in `public/sitemap.xml`.
 
-To add a page: add its route in `src/App.jsx`, its entry in `src/config/pageMeta.js` and its URL in `public/sitemap.xml`.
+To add a page: add its route in `src/App.jsx`, its entry in `src/config/pageMeta.js`, its module in `PAGE_MODULES`
+in `scripts/prerender.mjs` and its URL in `public/sitemap.xml`.
 Old URLs (`/portfolio`, `/careers`) redirect permanently via `public/_redirects` and `vercel.json`.
 
 After going live: verify the domain in Google Search Console (DNS TXT record is easiest), submit
@@ -76,12 +83,10 @@ After going live: verify the domain in Google Search Console (DNS TXT record is 
 
 ## Forms
 
-All forms validate in the browser and show a success message.
-
-- **Contact and job application forms:** saved to Google Sheets (`contactus` and `jobs` tabs) through a Google Apps Script Web app. Setup steps are in
-  [`google-apps-script/README.md`](google-apps-script/README.md); the site needs `VITE_FORMS_ENDPOINT` (see `.env.example`).
-- **Hiring requirement and newsletter forms:** not connected yet (simulated) — add them to
-  `SHEET_FORMS` in `src/utils/submitForm.js` and to `FORMS` in the Apps Script when ready.
+All forms validate in the browser. These are saved to Google Sheets through a Google Apps Script Web app:
+contact (`contactus` tab), job application (`jobs`) and hiring requirement (`Hiring`). The newsletter form is not connected (simulated).
+Setup steps are in [`google-apps-script/README.md`](google-apps-script/README.md); the site needs
+`VITE_FORMS_ENDPOINT` (see `.env.example`).
 
 ## Project structure
 

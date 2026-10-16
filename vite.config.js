@@ -13,6 +13,8 @@ export default defineConfig({
   build: {
     sourcemap: false,
     cssCodeSplit: true,
+    // Read by scripts/prerender.mjs to preload each page's own JS/CSS (deleted after use).
+    manifest: true,
     rolldownOptions: {
       output: {
         // Keep everything the first page load needs in the entry chunk (one JS + one CSS file)

@@ -6,12 +6,19 @@ import { useEffect, useRef, useState } from 'react'
  */
 export function useInView({ threshold = 0, rootMargin = '0px 0px -60px 0px', once = true } = {}) {
   const ref = useRef(null)
-  // Without IntersectionObserver support, treat everything as visible.
-  const [inView, setInView] = useState(() => typeof IntersectionObserver === 'undefined')
+  // Starts false on the server and in the browser so prerendered markup hydrates without a mismatch.
+  const [inView, setInView] = useState(false)
 
   useEffect(() => {
     const node = ref.current
-    if (!node || typeof IntersectionObserver === 'undefined') return undefined
+    if (!node) return undefined
+    // Without IntersectionObserver support, treat everything as visible.
+    if (typeof IntersectionObserver === 'undefined') {
+      // Must run after hydration (not in the initial state) so server and client markup match.
+      // eslint-disable-next-line react/set-state-in-effect
+      setInView(true)
+      return undefined
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
