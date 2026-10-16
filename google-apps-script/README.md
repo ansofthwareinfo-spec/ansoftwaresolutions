@@ -1,13 +1,12 @@
 # Website forms → Google Sheets
 
-Every website form submission is saved as a new row in one Google Sheet:
+Contact, job application and hiring requirement submissions are saved as new rows in one Google Sheet:
 
 | Website form | Sheet tab |
 |---|---|
 | Contact page | `contactus` |
 | Jobs page (job application) | `jobs` |
-| Hire Talent page (hiring requirement) | `hiring` |
-| Footer newsletter sign-up | `newsletter` |
+| Hire Talent page (hiring requirement) | `Hiring` |
 
 Candidates share their resume as a Google Drive, OneDrive or Dropbox link, saved in the **Resume link** column.
 

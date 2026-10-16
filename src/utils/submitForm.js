@@ -3,11 +3,12 @@
  *
  * Forms listed in SHEET_FORMS are sent to the Google Apps Script Web app, which saves each one
  * as a row in Google Sheets (see google-apps-script/README.md). Its URL comes from VITE_FORMS_ENDPOINT.
- * In local development without an endpoint, submissions are simulated so the UI can show a success state.
+ * Other forms (the newsletter) are still simulated so the UI can show a success state; so are all forms in
+ * local development without an endpoint.
  * Keep the honeypot check — bots that fill the hidden field are dropped silently.
  */
 const ENDPOINT = import.meta.env.VITE_FORMS_ENDPOINT
-const SHEET_FORMS = ['contact', 'job-application', 'hiring-request', 'newsletter']
+const SHEET_FORMS = ['contact', 'job-application', 'hiring-request']
 const SIMULATED_DELAY_MS = 1200
 
 function sanitize(payload) {

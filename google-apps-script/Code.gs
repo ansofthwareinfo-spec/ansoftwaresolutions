@@ -4,8 +4,7 @@
  * Saves website form submissions as rows in this Google Sheet:
  *   Contact page form          -> "contactus" tab
  *   Jobs page form             -> "jobs" tab (candidates share their resume as a Drive/OneDrive/Dropbox link)
- *   Hire Talent requirement    -> "hiring" tab
- *   Footer newsletter sign-up  -> "newsletter" tab
+ *   Hire Talent requirement    -> "Hiring" tab
  *
  * Setup: see README.md in this folder. Paste this whole file into
  * Extensions > Apps Script of your Google Sheet, then deploy it as a Web app.
@@ -57,7 +56,7 @@ const FORMS = {
     ],
   },
   'hiring-request': {
-    sheet: 'hiring',
+    sheet: 'Hiring',
     fields: [
       ['company', 'Company'],
       ['fullName', 'Contact name'],
@@ -71,10 +70,6 @@ const FORMS = {
       ['details', 'Notes'],
       ['consent', 'Consent'],
     ],
-  },
-  newsletter: {
-    sheet: 'newsletter',
-    fields: [['email', 'Email']],
   },
 };
 
